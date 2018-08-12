@@ -1,0 +1,250 @@
+﻿Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe assembly.
+Committing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe assembly.
+Remove InstallState file because there are no installers.
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Creating EventLog source MachineLearning_Service in log Application...
+Rolling back assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Restoring event log to previous state for source MachineLearning_Service.
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Rolling back assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Creating EventLog source MachineLearning_Service in log Application...
+Rolling back assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Restoring event log to previous state for source MachineLearning_Service.
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Service MachineLearning_Service has been successfully installed.
+Creating EventLog source MachineLearning_Service in log Application...
+Committing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Uninstalling assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Removing EventLog source MachineLearning_Service.
+Service MachineLearning_Service is being removed from the system...
+Service MachineLearning_Service was successfully removed from the system.
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Service MachineLearning_Service has been successfully installed.
+Creating EventLog source MachineLearning_Service in log Application...
+Committing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Uninstalling assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Removing EventLog source MachineLearning_Service.
+Service MachineLearning_Service is being removed from the system...
+Service MachineLearning_Service was successfully removed from the system.
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Service MachineLearning_Service has been successfully installed.
+Creating EventLog source MachineLearning_Service in log Application...
+Committing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Uninstalling assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Removing EventLog source MachineLearning_Service.
+Service MachineLearning_Service is being removed from the system...
+Service MachineLearning_Service was successfully removed from the system.
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Service MachineLearning_Service has been successfully installed.
+Creating EventLog source MachineLearning_Service in log Application...
+Committing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Uninstalling assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Removing EventLog source MachineLearning_Service.
+Service MachineLearning_Service is being removed from the system...
+Service MachineLearning_Service was successfully removed from the system.
+Attempt to stop service MachineLearning_Service.
+Installing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Service MachineLearning_Service has been successfully installed.
+Creating EventLog source MachineLearning_Service in log Application...
+Committing assembly 'C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Uninstalling assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Removing EventLog source MachineLearning_Service.
+Service MachineLearning_Service is being removed from the system...
+Service MachineLearning_Service was successfully removed from the system.
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Rolling back assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Rolling back assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Creating EventLog source MachineLearning_Service in log Application...
+Rolling back assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Restoring event log to previous state for source MachineLearning_Service.
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Rolling back assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Creating EventLog source MachineLearning_Service in log Application...
+Rolling back assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Restoring event log to previous state for source MachineLearning_Service.
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Service MachineLearning_Service has been successfully installed.
+Creating EventLog source MachineLearning_Service in log Application...
+Committing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Uninstalling assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Removing EventLog source MachineLearning_Service.
+Service MachineLearning_Service is being removed from the system...
+Service MachineLearning_Service was successfully removed from the system.
+Installing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+Installing service MachineLearning_Service...
+Service MachineLearning_Service has been successfully installed.
+Creating EventLog source MachineLearning_Service in log Application...
+Committing assembly 'C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.InstallLog
+   assemblypath = C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe

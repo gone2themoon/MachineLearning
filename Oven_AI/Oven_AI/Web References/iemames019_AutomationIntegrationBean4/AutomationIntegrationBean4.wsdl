@@ -1,0 +1,1779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://systemagmbh.com/manufacturing-automation/r4/" targetNamespace="http://systemagmbh.com/manufacturing-automation/r4/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:ns1="http://www.sap.com/me/inventory" xmlns:ns2="http://www.sap.com/me/common" targetNamespace="http://systemagmbh.com/manufacturing-automation/r4/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.sap.com/me/inventory" />
+      <xs:import namespace="http://www.sap.com/me/common" />
+      <xs:element name="AutomationException" type="tns:AutomationException" />
+      <xs:element name="assemble" type="tns:assemble" />
+      <xs:element name="assembleNonBomComponent" type="tns:assembleNonBomComponent" />
+      <xs:element name="assembleNonBomComponentResponse" type="tns:assembleNonBomComponentResponse" />
+      <xs:element name="assembleResponse" type="tns:assembleResponse" />
+      <xs:element name="assignImagerId" type="tns:assignImagerId" />
+      <xs:element name="assignImagerIdResponse" type="tns:assignImagerIdResponse" />
+      <xs:element name="assignSerialId" type="tns:assignSerialId" />
+      <xs:element name="assignSerialIdResponse" type="tns:assignSerialIdResponse" />
+      <xs:element name="changeResourceState" type="tns:changeResourceState" />
+      <xs:element name="changeResourceStateResponse" type="tns:changeResourceStateResponse" />
+      <xs:element name="checkAlternateComponents" type="tns:checkAlternateComponents" />
+      <xs:element name="checkAlternateComponentsResponse" type="tns:checkAlternateComponentsResponse" />
+      <xs:element name="closeContainer" type="tns:closeContainer" />
+      <xs:element name="closeContainerResponse" type="tns:closeContainerResponse" />
+      <xs:element name="complete" type="tns:complete" />
+      <xs:element name="completeICT" type="tns:completeICT" />
+      <xs:element name="completeICTResponse" type="tns:completeICTResponse" />
+      <xs:element name="completeResponse" type="tns:completeResponse" />
+      <xs:element name="createContainer" type="tns:createContainer" />
+      <xs:element name="createContainerResponse" type="tns:createContainerResponse" />
+      <xs:element name="getHUDetails" type="tns:getHUDetails" />
+      <xs:element name="getHUDetailsResponse" type="tns:getHUDetailsResponse" />
+      <xs:element name="getNCsByFilter" type="tns:getNCsByFilter" />
+      <xs:element name="getNCsByFilterResponse" type="tns:getNCsByFilterResponse" />
+      <xs:element name="getSFCOperation" type="tns:getSFCOperation" />
+      <xs:element name="getSFCOperationResponse" type="tns:getSFCOperationResponse" />
+      <xs:element name="getSFCPath" type="tns:getSFCPath" />
+      <xs:element name="getSFCPathResponse" type="tns:getSFCPathResponse" />
+      <xs:element name="getSFCRecipe" type="tns:getSFCRecipe" />
+      <xs:element name="getSFCRecipeResponse" type="tns:getSFCRecipeResponse" />
+      <xs:element name="getSfcStatus" type="tns:getSfcStatus" />
+      <xs:element name="getSfcStatusResponse" type="tns:getSfcStatusResponse" />
+      <xs:element name="getTimeSensitiveInventory" type="tns:getTimeSensitiveInventory" />
+      <xs:element name="getTimeSensitiveInventoryResponse" type="tns:getTimeSensitiveInventoryResponse" />
+      <xs:element name="isAlive" type="tns:isAlive" />
+      <xs:element name="isAliveResponse" type="tns:isAliveResponse" />
+      <xs:element name="logNonConformance" type="tns:logNonConformance" />
+      <xs:element name="logNonConformanceResponse" type="tns:logNonConformanceResponse" />
+      <xs:element name="logParameters" type="tns:logParameters" />
+      <xs:element name="logParametersResponse" type="tns:logParametersResponse" />
+      <xs:element name="logResourceState" type="tns:logResourceState" />
+      <xs:element name="logResourceStateResponse" type="tns:logResourceStateResponse" />
+      <xs:element name="nextJob" type="tns:nextJob" />
+      <xs:element name="nextJobResponse" type="tns:nextJobResponse" />
+      <xs:element name="pack" type="tns:pack" />
+      <xs:element name="packResponse" type="tns:packResponse" />
+      <xs:element name="rebookPanelEdgeNC" type="tns:rebookPanelEdgeNC" />
+      <xs:element name="rebookPanelEdgeNCResponse" type="tns:rebookPanelEdgeNCResponse" />
+      <xs:element name="reenterImagerId" type="tns:reenterImagerId" />
+      <xs:element name="reenterImagerIdResponse" type="tns:reenterImagerIdResponse" />
+      <xs:element name="reopenContainer" type="tns:reopenContainer" />
+      <xs:element name="reopenContainerResponse" type="tns:reopenContainerResponse" />
+      <xs:element name="signOff" type="tns:signOff" />
+      <xs:element name="signOffResponse" type="tns:signOffResponse" />
+      <xs:element name="start" type="tns:start" />
+      <xs:element name="startBomDetails" type="tns:startBomDetails" />
+      <xs:element name="startBomDetailsResponse" type="tns:startBomDetailsResponse" />
+      <xs:element name="startResponse" type="tns:startResponse" />
+      <xs:element name="startViscom" type="tns:startViscom" />
+      <xs:element name="startViscomResponse" type="tns:startViscomResponse" />
+      <xs:element name="validateRelease" type="tns:validateRelease" />
+      <xs:element name="validateReleaseResponse" type="tns:validateReleaseResponse" />
+      <xs:complexType name="getHUDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="setupMaterialRequest" type="tns:setupMaterialREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setupMaterialREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="huCode1" type="xs:string" />
+              <xs:element minOccurs="0" name="huCode2" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericREQ">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="resourceId" type="xs:string" />
+          <xs:element minOccurs="0" name="softwareRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="timeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getHUDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:setupMaterialRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setupMaterialRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="huCustomData" nillable="true" type="tns:customData" />
+              <xs:element minOccurs="0" name="huId" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="materialClassification" nillable="true" type="tns:customData" />
+              <xs:element minOccurs="0" name="materialId" type="xs:string" />
+              <xs:element minOccurs="0" name="materialRevision" type="xs:string" />
+              <xs:element minOccurs="0" name="quantity" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="genericRSP">
+        <xs:sequence>
+          <xs:element name="resultCode" type="xs:int" />
+          <xs:element minOccurs="0" name="resultText" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="customData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AutomationException">
+        <xs:sequence>
+          <xs:element name="errorCode" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkAlternateComponents">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="checkAlternateComponentRequest" type="tns:checkAlternateComponentREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkAlternateComponentREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="alternateMaterialId" type="xs:string" />
+              <xs:element minOccurs="0" name="alternateMaterialRevision" type="xs:string" />
+              <xs:element minOccurs="0" name="currentMaterialId" type="xs:string" />
+              <xs:element minOccurs="0" name="currentMaterialRevision" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="operSFCREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="operation" type="xs:string" />
+              <xs:element minOccurs="0" name="sfc" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="checkAlternateComponentsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:checkAlternateComponentRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkAlternateComponentRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="nextJob">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="releaseNextMaterialRequest" type="tns:nextJobREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nextJobREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="operation" type="xs:string" />
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+              <xs:element minOccurs="0" name="sfc" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="nextJobResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:nextJobRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nextJobRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:sfcMaterialRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="bomDatas" nillable="true" type="tns:bomData" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="customDatas" nillable="true" type="tns:customData" />
+              <xs:element minOccurs="0" name="operation" type="xs:string" />
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="sfcMaterialRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="materialId" type="xs:string" />
+              <xs:element minOccurs="0" name="materialRevision" type="xs:string" />
+              <xs:element minOccurs="0" name="sfc" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="bomData">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="materialClassification" nillable="true" type="tns:customData" />
+          <xs:element minOccurs="0" name="materialId" type="xs:string" />
+          <xs:element minOccurs="0" name="materialRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="operation" type="xs:string" />
+          <xs:element minOccurs="0" name="quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sequence" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateRelease">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="validateReleaseRequest" type="tns:validateReleaseREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateReleaseREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="operation" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="validateReleaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:validateReleaseRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateReleaseRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="bomDatas" nillable="true" type="tns:bomData" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="customDatas" nillable="true" type="tns:customData" />
+              <xs:element minOccurs="0" name="materialId" type="xs:string" />
+              <xs:element minOccurs="0" name="materialRevision" type="xs:string" />
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="assignImagerId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="assignImagerIdRequest" type="tns:operSFCREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignImagerIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sfcDetailRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sfcDetailRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:sfcMaterialRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="nextOperation" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="reenterImagerId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="reenterImagerIdRequest" type="tns:operSFCREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reenterImagerIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:reenterImagerIdRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reenterImagerIdRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:sfcDetailRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="bomDatas" nillable="true" type="tns:bomData" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="customDatas" nillable="true" type="tns:customData" />
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="start">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="startRequest" type="tns:startREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="startResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:startRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:sfcMaterialRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="startViscom">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="startRequest" type="tns:startREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startViscomResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:startViscomRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startViscomRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:startRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="workmap" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="complete">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="completeRequest" type="tns:operSFCREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sfcDetailRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeICT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="completeICTRequest" type="tns:completeICTRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeICTRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="boardStatusList" nillable="true" type="tns:boardstatus" />
+              <xs:element minOccurs="0" name="fileContent" type="xs:string" />
+              <xs:element minOccurs="0" name="ftpFileName" type="xs:string" />
+              <xs:element minOccurs="0" name="ftpPath" type="xs:string" />
+              <xs:element minOccurs="0" name="sfcStatus" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="boardstatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="boardstatus" type="xs:string" />
+          <xs:element minOccurs="0" name="location" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeICTResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sfcDetailRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assemble">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="assembleRequest" type="tns:assembleREQ" />
+          <xs:element name="isWithoutQty" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assembleREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="componentDatas" nillable="true" type="tns:componentData" />
+              <xs:element minOccurs="0" name="quantity" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="componentData">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="bomParameters" nillable="true" type="tns:bomParameter" />
+          <xs:element minOccurs="0" name="inventory" type="xs:string" />
+          <xs:element minOccurs="0" name="location" type="xs:string" />
+          <xs:element minOccurs="0" name="materialId" type="xs:string" />
+          <xs:element minOccurs="0" name="materialRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="quantity" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="bomParameter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assembleResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logParameters">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="logParametricDataRequest" type="tns:logParametersREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logParametersREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="logParameters" nillable="true" type="tns:logParameter" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="logParameter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="compareMode" type="xs:string" />
+          <xs:element minOccurs="0" name="dataType" type="xs:string" />
+          <xs:element minOccurs="0" name="identifier" type="xs:string" />
+          <xs:element minOccurs="0" name="lowerLimit" type="xs:string" />
+          <xs:element name="passFailed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="upperLimit" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logParametersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logNonConformance">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="logNCRequest" type="tns:logNCREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logNCREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="ncDatas" nillable="true" type="tns:ncData" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ncData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="compareMode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="customValues" nillable="true" type="tns:customData" />
+          <xs:element minOccurs="0" name="identifier" type="xs:string" />
+          <xs:element minOccurs="0" name="location" type="xs:string" />
+          <xs:element minOccurs="0" name="lowerLimit" type="xs:string" />
+          <xs:element minOccurs="0" name="ncComment" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceDesignator" type="xs:string" />
+          <xs:element minOccurs="0" name="upperLimit" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logNonConformanceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeResourceState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="changeResourceStateRequest" type="tns:changeResourceStateREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeResourceStateREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="newState" type="xs:string" />
+              <xs:element minOccurs="0" name="rcComment" type="xs:string" />
+              <xs:element minOccurs="0" name="reasonCode" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="changeResourceStateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logResourceState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="logResourceDataRequest" type="tns:logResourceStateREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logResourceStateREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="resourceStates" nillable="true" type="tns:resourceState" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="resourceState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entryReasonId" type="xs:string" />
+          <xs:element minOccurs="0" name="entryReasonText" type="xs:string" />
+          <xs:element minOccurs="0" name="entryTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="leaveTimeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="logResourceStateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="signOff">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="signOffRequest" type="tns:operSFCREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="signOffResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sfcMaterialRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignSerialId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="assignSerialIdRequest" type="tns:assignSerialIdREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assignSerialIdREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="assignSerialIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:sfcMaterialRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAlive">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isAliveRequest" type="tns:genericREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAliveResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:isAliveRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAliveRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="resourceId" type="xs:string" />
+              <xs:element minOccurs="0" name="resourceState" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="closeContainer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="closeContainerRequest" type="tns:closeContainerREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="closeContainerREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="container" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="closeContainerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pack">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="packRequest" type="tns:packREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="packREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="container" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="packResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createContainer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createContainerRequest" type="tns:createContainerREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createContainerREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="container" type="xs:string" />
+              <xs:element minOccurs="0" name="containerType" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="createContainerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:containerRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="containerRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="container" type="xs:string" />
+              <xs:element minOccurs="0" name="containerType" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="containerTypeCustomDatas" nillable="true" type="tns:customData" />
+              <xs:element name="containerWeight" type="xs:float" />
+              <xs:element name="height" type="xs:float" />
+              <xs:element name="length" type="xs:float" />
+              <xs:element name="maxFillWeight" type="xs:float" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="packItems" nillable="true" type="tns:packItem" />
+              <xs:element minOccurs="0" name="vendor" type="xs:string" />
+              <xs:element name="width" type="xs:float" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="packItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="materialDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="materialId" type="xs:string" />
+          <xs:element minOccurs="0" name="materialRevision" type="xs:string" />
+          <xs:element name="maximumQuantity" type="xs:int" />
+          <xs:element name="minimumQuantity" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reopenContainer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="reopenContainerRequest" type="tns:reopenContainerREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reopenContainerREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="container" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="reopenContainerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:containerRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSfcStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getSfcStatusRequest" type="tns:getSfcStatusREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSfcStatusREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="sfc" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getSfcStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getSfcStatusRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSfcStatusRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element name="done" type="xs:boolean" />
+              <xs:element name="hasBeenUsed" type="xs:boolean" />
+              <xs:element minOccurs="0" name="material" type="xs:string" />
+              <xs:element minOccurs="0" name="mesCompType" type="xs:string" />
+              <xs:element name="openNCs" type="xs:boolean" />
+              <xs:element name="qtyOnHand" type="xs:int" />
+              <xs:element minOccurs="0" name="revision" type="xs:string" />
+              <xs:element name="sfcNotFound" type="xs:boolean" />
+              <xs:element minOccurs="0" name="sfcStatus" type="xs:string" />
+              <xs:element minOccurs="0" name="status" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="assembleNonBomComponent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="assembleRequest" type="tns:assembleREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assembleNonBomComponentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startBomDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="startBomDetailsRequest" type="tns:startREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startBomDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:startBomDetailsRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startBomDetailsRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:startRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="bomDatas" nillable="true" type="tns:bomData" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="customDatas" nillable="true" type="tns:customData" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getSFCOperation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getSFCOperationRequest" type="tns:getSFCOperationREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSFCOperationREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="sfc" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getSFCOperationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getSFCOperationRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSFCOperationRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:sfcMaterialRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="operation" type="xs:string" />
+              <xs:element minOccurs="0" name="status" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getSFCPath">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getSFCPathRequest" type="tns:getSFCPathREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSFCPathREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getSFCPathResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getSFCPathRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSFCPathRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="operation" type="xs:string" />
+              <xs:element minOccurs="0" name="path" type="xs:string" />
+              <xs:element minOccurs="0" name="prefix" type="xs:string" />
+              <xs:element minOccurs="0" name="sfc" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getSFCRecipe">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getSFCRecipeRequest" type="tns:getSFCRecipeREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSFCRecipeREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="materialID" type="xs:string" />
+              <xs:element minOccurs="0" name="materialRevision" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getSFCRecipeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getSFCRecipeRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSFCRecipeRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:sfcMaterialRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="operation" type="xs:string" />
+              <xs:element minOccurs="0" name="recipe" type="xs:string" />
+              <xs:element minOccurs="0" name="resourceId" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="rebookPanelEdgeNC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rebookPanelEdgeNCRequest" type="tns:operSFCREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rebookPanelEdgeNCResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:genericRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNCsByFilter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getNCsByFilterRequest" type="tns:getNCsByFilterREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNCsByFilterREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:operSFCREQ">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ncCategory" type="xs:string" />
+              <xs:element minOccurs="0" name="ncCode" type="xs:string" />
+              <xs:element minOccurs="0" name="ncMaterialId" type="xs:string" />
+              <xs:element minOccurs="0" name="ncMaterialRev" type="xs:string" />
+              <xs:element minOccurs="0" name="ncResource" type="xs:string" />
+              <xs:element minOccurs="0" name="ncStatus" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getNCsByFilterResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getNCsByFilterRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNCsByFilterRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="ncList" nillable="true" type="tns:ncObj" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ncObj">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actionCode" type="xs:string" />
+          <xs:element minOccurs="0" name="activity" type="xs:string" />
+          <xs:element minOccurs="0" name="assemblyIncidentNum" type="xs:string" />
+          <xs:element minOccurs="0" name="batchIncidentNum" type="xs:string" />
+          <xs:element minOccurs="0" name="closedDateTime" type="xs:anySimpleType" />
+          <xs:element minOccurs="0" name="closedUser" type="xs:string" />
+          <xs:element minOccurs="0" name="comments" type="xs:string" />
+          <xs:element minOccurs="0" name="componentSFCItemRef" type="xs:string" />
+          <xs:element minOccurs="0" name="componentSFCRef" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="components" nillable="true" type="tns:ComponentIdentifier" />
+          <xs:element minOccurs="0" name="copiedFromNcDataRef" type="xs:string" />
+          <xs:element minOccurs="0" name="createdDateTime" type="xs:anySimpleType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="customValues" nillable="true" type="tns:keyValuePair" />
+          <xs:element minOccurs="0" name="dataTypeRef" type="xs:string" />
+          <xs:element minOccurs="0" name="dateTime" type="xs:anySimpleType" />
+          <xs:element minOccurs="0" name="defectCount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="dispositionFunctionRef" type="xs:string" />
+          <xs:element minOccurs="0" name="dispositionRouterRef" type="xs:string" />
+          <xs:element minOccurs="0" name="failureId" type="xs:string" />
+          <xs:element minOccurs="0" name="incidentDateTime" type="xs:anySimpleType" />
+          <xs:element minOccurs="0" name="incidentNumberRef" type="xs:string" />
+          <xs:element minOccurs="0" name="inventoryRef" type="xs:string" />
+          <xs:element minOccurs="0" name="location" type="xs:string" />
+          <xs:element minOccurs="0" name="materialId" type="xs:string" />
+          <xs:element minOccurs="0" name="materialRev" type="xs:string" />
+          <xs:element minOccurs="0" name="modifiedDateTime" type="xs:anySimpleType" />
+          <xs:element minOccurs="0" name="ncCode" type="xs:string" />
+          <xs:element minOccurs="0" name="ncCodeCategory" type="xs:string" />
+          <xs:element minOccurs="0" name="ncDateTime" type="xs:anySimpleType" />
+          <xs:element minOccurs="0" name="ncRef" type="xs:string" />
+          <xs:element minOccurs="0" name="ncStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="operationId" type="xs:string" />
+          <xs:element minOccurs="0" name="parentNCRef" type="xs:string" />
+          <xs:element minOccurs="0" name="qty" type="xs:decimal" />
+          <xs:element minOccurs="0" name="rootCauseOperRef" type="xs:string" />
+          <xs:element minOccurs="0" name="routerRef" type="xs:string" />
+          <xs:element minOccurs="0" name="severity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="stepId" type="xs:string" />
+          <xs:element minOccurs="0" name="timesProcessed" type="xs:decimal" />
+          <xs:element minOccurs="0" name="userRef" type="xs:string" />
+          <xs:element minOccurs="0" name="verifiedState" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ComponentIdentifier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="refDes" type="xs:string" />
+          <xs:element minOccurs="0" name="componentRef" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="assemblyRefs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="removedAssemblyRefs" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="keyValuePair">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="key" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTimeSensitiveInventory">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getTimeSensitiveInventoryRequest" type="tns:getTimeSensitiveInventoryREQ" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTimeSensitiveInventoryREQ">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericREQ">
+            <xs:sequence>
+              <xs:element name="inventory" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getTimeSensitiveInventoryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:getTimeSensitiveInventoryRSP" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTimeSensitiveInventoryRSP">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:genericRSP">
+            <xs:sequence>
+              <xs:element name="tsmData" type="ns1:TsmDataResponse" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ns1="http://www.sap.com/me/common" elementFormDefault="qualified" targetNamespace="http://www.sap.com/me/inventory" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.sap.com/me/common" />
+      <xs:complexType name="TsmDataResponse">
+        <xs:sequence>
+          <xs:element name="tsmInstanceRef" type="xs:string" />
+          <xs:element name="inventoryRef" type="xs:string" />
+          <xs:element minOccurs="0" name="inventory" type="xs:string" />
+          <xs:element minOccurs="0" name="sfcRef" type="xs:string" />
+          <xs:element minOccurs="0" name="sfc" type="xs:string" />
+          <xs:element name="itemRef" type="xs:string" />
+          <xs:element name="item" type="xs:string" />
+          <xs:element name="itemRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="expirationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="expirationDateUnit" type="ns1:TsmLifeUnit" />
+          <xs:element minOccurs="0" name="maxFloorLife" type="xs:decimal" />
+          <xs:element minOccurs="0" name="maxFloorLifeUnits" type="ns1:TsmLifeUnit" />
+          <xs:element minOccurs="0" name="maxFloorLifeInUnit" type="xs:decimal" />
+          <xs:element minOccurs="0" name="currentTimeOutInUnit" type="xs:string" />
+          <xs:element name="checkedOut" type="xs:boolean" />
+          <xs:element minOccurs="0" name="remainingShelfLife" type="xs:string" />
+          <xs:element minOccurs="0" name="remainingFloorLife" type="xs:string" />
+          <xs:element minOccurs="0" name="currentTimeOut" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cumulativeTimeOut" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cumulativeTimeOutInUnit" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.sap.com/me/common" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="TsmLifeUnit">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MINUTES" />
+          <xs:enumeration value="HOURS" />
+          <xs:enumeration value="DAYS" />
+          <xs:enumeration value="MONTHS" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getHUDetailsIn">
+    <wsdl:part name="parameters" element="tns:getHUDetails" />
+  </wsdl:message>
+  <wsdl:message name="getHUDetailsOut">
+    <wsdl:part name="getHUDetailsResponse" element="tns:getHUDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHUDetailsFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="checkAlternateComponentsIn">
+    <wsdl:part name="parameters" element="tns:checkAlternateComponents" />
+  </wsdl:message>
+  <wsdl:message name="checkAlternateComponentsOut">
+    <wsdl:part name="checkAlternateComponentsResponse" element="tns:checkAlternateComponentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkAlternateComponentsFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="nextJobIn">
+    <wsdl:part name="parameters" element="tns:nextJob" />
+  </wsdl:message>
+  <wsdl:message name="nextJobOut">
+    <wsdl:part name="nextJobResponse" element="tns:nextJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="nextJobFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="validateReleaseIn">
+    <wsdl:part name="parameters" element="tns:validateRelease" />
+  </wsdl:message>
+  <wsdl:message name="validateReleaseOut">
+    <wsdl:part name="validateReleaseResponse" element="tns:validateReleaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateReleaseFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="assignImagerIdIn">
+    <wsdl:part name="parameters" element="tns:assignImagerId" />
+  </wsdl:message>
+  <wsdl:message name="assignImagerIdOut">
+    <wsdl:part name="assignImagerIdResponse" element="tns:assignImagerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="assignImagerIdFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="reenterImagerIdIn">
+    <wsdl:part name="parameters" element="tns:reenterImagerId" />
+  </wsdl:message>
+  <wsdl:message name="reenterImagerIdOut">
+    <wsdl:part name="reenterImagerIdResponse" element="tns:reenterImagerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="reenterImagerIdFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="startIn">
+    <wsdl:part name="parameters" element="tns:start" />
+  </wsdl:message>
+  <wsdl:message name="startOut">
+    <wsdl:part name="startResponse" element="tns:startResponse" />
+  </wsdl:message>
+  <wsdl:message name="startFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="startViscomIn">
+    <wsdl:part name="parameters" element="tns:startViscom" />
+  </wsdl:message>
+  <wsdl:message name="startViscomOut">
+    <wsdl:part name="startViscomResponse" element="tns:startViscomResponse" />
+  </wsdl:message>
+  <wsdl:message name="startViscomFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="completeIn">
+    <wsdl:part name="parameters" element="tns:complete" />
+  </wsdl:message>
+  <wsdl:message name="completeOut">
+    <wsdl:part name="completeResponse" element="tns:completeResponse" />
+  </wsdl:message>
+  <wsdl:message name="completeFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="completeICTIn">
+    <wsdl:part name="parameters" element="tns:completeICT" />
+  </wsdl:message>
+  <wsdl:message name="completeICTOut">
+    <wsdl:part name="completeICTResponse" element="tns:completeICTResponse" />
+  </wsdl:message>
+  <wsdl:message name="completeICTFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="assembleIn">
+    <wsdl:part name="parameters" element="tns:assemble" />
+  </wsdl:message>
+  <wsdl:message name="assembleOut">
+    <wsdl:part name="assembleResponse" element="tns:assembleResponse" />
+  </wsdl:message>
+  <wsdl:message name="assembleFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="logParametersIn">
+    <wsdl:part name="parameters" element="tns:logParameters" />
+  </wsdl:message>
+  <wsdl:message name="logParametersOut">
+    <wsdl:part name="logParametersResponse" element="tns:logParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="logParametersFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="logNonConformanceIn">
+    <wsdl:part name="parameters" element="tns:logNonConformance" />
+  </wsdl:message>
+  <wsdl:message name="logNonConformanceOut">
+    <wsdl:part name="logNonConformanceResponse" element="tns:logNonConformanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="logNonConformanceFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="changeResourceStateIn">
+    <wsdl:part name="parameters" element="tns:changeResourceState" />
+  </wsdl:message>
+  <wsdl:message name="changeResourceStateOut">
+    <wsdl:part name="changeResourceStateResponse" element="tns:changeResourceStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="changeResourceStateFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="logResourceStateIn">
+    <wsdl:part name="parameters" element="tns:logResourceState" />
+  </wsdl:message>
+  <wsdl:message name="logResourceStateOut">
+    <wsdl:part name="logResourceStateResponse" element="tns:logResourceStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="logResourceStateFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="signOffIn">
+    <wsdl:part name="parameters" element="tns:signOff" />
+  </wsdl:message>
+  <wsdl:message name="signOffOut">
+    <wsdl:part name="signOffResponse" element="tns:signOffResponse" />
+  </wsdl:message>
+  <wsdl:message name="signOffFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="assignSerialIdIn">
+    <wsdl:part name="parameters" element="tns:assignSerialId" />
+  </wsdl:message>
+  <wsdl:message name="assignSerialIdOut">
+    <wsdl:part name="assignSerialIdResponse" element="tns:assignSerialIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="assignSerialIdFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="isAliveIn">
+    <wsdl:part name="parameters" element="tns:isAlive" />
+  </wsdl:message>
+  <wsdl:message name="isAliveOut">
+    <wsdl:part name="isAliveResponse" element="tns:isAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="isAliveFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="closeContainerIn">
+    <wsdl:part name="parameters" element="tns:closeContainer" />
+  </wsdl:message>
+  <wsdl:message name="closeContainerOut">
+    <wsdl:part name="closeContainerResponse" element="tns:closeContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeContainerFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="packIn">
+    <wsdl:part name="parameters" element="tns:pack" />
+  </wsdl:message>
+  <wsdl:message name="packOut">
+    <wsdl:part name="packResponse" element="tns:packResponse" />
+  </wsdl:message>
+  <wsdl:message name="packFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="createContainerIn">
+    <wsdl:part name="parameters" element="tns:createContainer" />
+  </wsdl:message>
+  <wsdl:message name="createContainerOut">
+    <wsdl:part name="createContainerResponse" element="tns:createContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="createContainerFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="reopenContainerIn">
+    <wsdl:part name="parameters" element="tns:reopenContainer" />
+  </wsdl:message>
+  <wsdl:message name="reopenContainerOut">
+    <wsdl:part name="reopenContainerResponse" element="tns:reopenContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="reopenContainerFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="getSfcStatusIn">
+    <wsdl:part name="parameters" element="tns:getSfcStatus" />
+  </wsdl:message>
+  <wsdl:message name="getSfcStatusOut">
+    <wsdl:part name="getSfcStatusResponse" element="tns:getSfcStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSfcStatusFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="assembleNonBomComponentIn">
+    <wsdl:part name="parameters" element="tns:assembleNonBomComponent" />
+  </wsdl:message>
+  <wsdl:message name="assembleNonBomComponentOut">
+    <wsdl:part name="assembleNonBomComponentResponse" element="tns:assembleNonBomComponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="assembleNonBomComponentFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:message name="startBomDetailsIn">
+    <wsdl:part name="parameters" element="tns:startBomDetails" />
+  </wsdl:message>
+  <wsdl:message name="startBomDetailsOut">
+    <wsdl:part name="startBomDetailsResponse" element="tns:startBomDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSFCOperationIn">
+    <wsdl:part name="parameters" element="tns:getSFCOperation" />
+  </wsdl:message>
+  <wsdl:message name="getSFCOperationOut">
+    <wsdl:part name="getSFCOperationResponse" element="tns:getSFCOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSFCPathIn">
+    <wsdl:part name="parameters" element="tns:getSFCPath" />
+  </wsdl:message>
+  <wsdl:message name="getSFCPathOut">
+    <wsdl:part name="getSFCPathResponse" element="tns:getSFCPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSFCRecipeIn">
+    <wsdl:part name="parameters" element="tns:getSFCRecipe" />
+  </wsdl:message>
+  <wsdl:message name="getSFCRecipeOut">
+    <wsdl:part name="getSFCRecipeResponse" element="tns:getSFCRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="rebookPanelEdgeNCIn">
+    <wsdl:part name="parameters" element="tns:rebookPanelEdgeNC" />
+  </wsdl:message>
+  <wsdl:message name="rebookPanelEdgeNCOut">
+    <wsdl:part name="rebookPanelEdgeNCResponse" element="tns:rebookPanelEdgeNCResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNCsByFilterIn">
+    <wsdl:part name="parameters" element="tns:getNCsByFilter" />
+  </wsdl:message>
+  <wsdl:message name="getNCsByFilterOut">
+    <wsdl:part name="getNCsByFilterResponse" element="tns:getNCsByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTimeSensitiveInventoryIn">
+    <wsdl:part name="parameters" element="tns:getTimeSensitiveInventory" />
+  </wsdl:message>
+  <wsdl:message name="getTimeSensitiveInventoryOut">
+    <wsdl:part name="getTimeSensitiveInventoryResponse" element="tns:getTimeSensitiveInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTimeSensitiveInventoryFault">
+    <wsdl:part name="AutomationException" element="tns:AutomationException" />
+  </wsdl:message>
+  <wsdl:portType name="AutomationIntegrationServiceR4_4">
+    <wsdl:operation name="getHUDetails" parameterOrder="parameters">
+      <wsdl:input message="tns:getHUDetailsIn" />
+      <wsdl:output message="tns:getHUDetailsOut" />
+      <wsdl:fault name="AutomationException" message="tns:getHUDetailsFault" />
+    </wsdl:operation>
+    <wsdl:operation name="checkAlternateComponents" parameterOrder="parameters">
+      <wsdl:input message="tns:checkAlternateComponentsIn" />
+      <wsdl:output message="tns:checkAlternateComponentsOut" />
+      <wsdl:fault name="AutomationException" message="tns:checkAlternateComponentsFault" />
+    </wsdl:operation>
+    <wsdl:operation name="nextJob" parameterOrder="parameters">
+      <wsdl:input message="tns:nextJobIn" />
+      <wsdl:output message="tns:nextJobOut" />
+      <wsdl:fault name="AutomationException" message="tns:nextJobFault" />
+    </wsdl:operation>
+    <wsdl:operation name="validateRelease" parameterOrder="parameters">
+      <wsdl:input message="tns:validateReleaseIn" />
+      <wsdl:output message="tns:validateReleaseOut" />
+      <wsdl:fault name="AutomationException" message="tns:validateReleaseFault" />
+    </wsdl:operation>
+    <wsdl:operation name="assignImagerId" parameterOrder="parameters">
+      <wsdl:input message="tns:assignImagerIdIn" />
+      <wsdl:output message="tns:assignImagerIdOut" />
+      <wsdl:fault name="AutomationException" message="tns:assignImagerIdFault" />
+    </wsdl:operation>
+    <wsdl:operation name="reenterImagerId" parameterOrder="parameters">
+      <wsdl:input message="tns:reenterImagerIdIn" />
+      <wsdl:output message="tns:reenterImagerIdOut" />
+      <wsdl:fault name="AutomationException" message="tns:reenterImagerIdFault" />
+    </wsdl:operation>
+    <wsdl:operation name="start" parameterOrder="parameters">
+      <wsdl:input message="tns:startIn" />
+      <wsdl:output message="tns:startOut" />
+      <wsdl:fault name="AutomationException" message="tns:startFault" />
+    </wsdl:operation>
+    <wsdl:operation name="startViscom" parameterOrder="parameters">
+      <wsdl:input message="tns:startViscomIn" />
+      <wsdl:output message="tns:startViscomOut" />
+      <wsdl:fault name="AutomationException" message="tns:startViscomFault" />
+    </wsdl:operation>
+    <wsdl:operation name="complete" parameterOrder="parameters">
+      <wsdl:input message="tns:completeIn" />
+      <wsdl:output message="tns:completeOut" />
+      <wsdl:fault name="AutomationException" message="tns:completeFault" />
+    </wsdl:operation>
+    <wsdl:operation name="completeICT" parameterOrder="parameters">
+      <wsdl:input message="tns:completeICTIn" />
+      <wsdl:output message="tns:completeICTOut" />
+      <wsdl:fault name="AutomationException" message="tns:completeICTFault" />
+    </wsdl:operation>
+    <wsdl:operation name="assemble" parameterOrder="parameters">
+      <wsdl:input message="tns:assembleIn" />
+      <wsdl:output message="tns:assembleOut" />
+      <wsdl:fault name="AutomationException" message="tns:assembleFault" />
+    </wsdl:operation>
+    <wsdl:operation name="logParameters" parameterOrder="parameters">
+      <wsdl:input message="tns:logParametersIn" />
+      <wsdl:output message="tns:logParametersOut" />
+      <wsdl:fault name="AutomationException" message="tns:logParametersFault" />
+    </wsdl:operation>
+    <wsdl:operation name="logNonConformance" parameterOrder="parameters">
+      <wsdl:input message="tns:logNonConformanceIn" />
+      <wsdl:output message="tns:logNonConformanceOut" />
+      <wsdl:fault name="AutomationException" message="tns:logNonConformanceFault" />
+    </wsdl:operation>
+    <wsdl:operation name="changeResourceState" parameterOrder="parameters">
+      <wsdl:input message="tns:changeResourceStateIn" />
+      <wsdl:output message="tns:changeResourceStateOut" />
+      <wsdl:fault name="AutomationException" message="tns:changeResourceStateFault" />
+    </wsdl:operation>
+    <wsdl:operation name="logResourceState" parameterOrder="parameters">
+      <wsdl:input message="tns:logResourceStateIn" />
+      <wsdl:output message="tns:logResourceStateOut" />
+      <wsdl:fault name="AutomationException" message="tns:logResourceStateFault" />
+    </wsdl:operation>
+    <wsdl:operation name="signOff" parameterOrder="parameters">
+      <wsdl:input message="tns:signOffIn" />
+      <wsdl:output message="tns:signOffOut" />
+      <wsdl:fault name="AutomationException" message="tns:signOffFault" />
+    </wsdl:operation>
+    <wsdl:operation name="assignSerialId" parameterOrder="parameters">
+      <wsdl:input message="tns:assignSerialIdIn" />
+      <wsdl:output message="tns:assignSerialIdOut" />
+      <wsdl:fault name="AutomationException" message="tns:assignSerialIdFault" />
+    </wsdl:operation>
+    <wsdl:operation name="isAlive" parameterOrder="parameters">
+      <wsdl:input message="tns:isAliveIn" />
+      <wsdl:output message="tns:isAliveOut" />
+      <wsdl:fault name="AutomationException" message="tns:isAliveFault" />
+    </wsdl:operation>
+    <wsdl:operation name="closeContainer" parameterOrder="parameters">
+      <wsdl:input message="tns:closeContainerIn" />
+      <wsdl:output message="tns:closeContainerOut" />
+      <wsdl:fault name="AutomationException" message="tns:closeContainerFault" />
+    </wsdl:operation>
+    <wsdl:operation name="pack" parameterOrder="parameters">
+      <wsdl:input message="tns:packIn" />
+      <wsdl:output message="tns:packOut" />
+      <wsdl:fault name="AutomationException" message="tns:packFault" />
+    </wsdl:operation>
+    <wsdl:operation name="createContainer" parameterOrder="parameters">
+      <wsdl:input message="tns:createContainerIn" />
+      <wsdl:output message="tns:createContainerOut" />
+      <wsdl:fault name="AutomationException" message="tns:createContainerFault" />
+    </wsdl:operation>
+    <wsdl:operation name="reopenContainer" parameterOrder="parameters">
+      <wsdl:input message="tns:reopenContainerIn" />
+      <wsdl:output message="tns:reopenContainerOut" />
+      <wsdl:fault name="AutomationException" message="tns:reopenContainerFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getSfcStatus" parameterOrder="parameters">
+      <wsdl:input message="tns:getSfcStatusIn" />
+      <wsdl:output message="tns:getSfcStatusOut" />
+      <wsdl:fault name="AutomationException" message="tns:getSfcStatusFault" />
+    </wsdl:operation>
+    <wsdl:operation name="assembleNonBomComponent" parameterOrder="parameters">
+      <wsdl:input message="tns:assembleNonBomComponentIn" />
+      <wsdl:output message="tns:assembleNonBomComponentOut" />
+      <wsdl:fault name="AutomationException" message="tns:assembleNonBomComponentFault" />
+    </wsdl:operation>
+    <wsdl:operation name="startBomDetails" parameterOrder="parameters">
+      <wsdl:input message="tns:startBomDetailsIn" />
+      <wsdl:output message="tns:startBomDetailsOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSFCOperation" parameterOrder="parameters">
+      <wsdl:input message="tns:getSFCOperationIn" />
+      <wsdl:output message="tns:getSFCOperationOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSFCPath" parameterOrder="parameters">
+      <wsdl:input message="tns:getSFCPathIn" />
+      <wsdl:output message="tns:getSFCPathOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSFCRecipe" parameterOrder="parameters">
+      <wsdl:input message="tns:getSFCRecipeIn" />
+      <wsdl:output message="tns:getSFCRecipeOut" />
+    </wsdl:operation>
+    <wsdl:operation name="rebookPanelEdgeNC" parameterOrder="parameters">
+      <wsdl:input message="tns:rebookPanelEdgeNCIn" />
+      <wsdl:output message="tns:rebookPanelEdgeNCOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNCsByFilter" parameterOrder="parameters">
+      <wsdl:input message="tns:getNCsByFilterIn" />
+      <wsdl:output message="tns:getNCsByFilterOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeSensitiveInventory" parameterOrder="parameters">
+      <wsdl:input message="tns:getTimeSensitiveInventoryIn" />
+      <wsdl:output message="tns:getTimeSensitiveInventoryOut" />
+      <wsdl:fault name="AutomationException" message="tns:getTimeSensitiveInventoryFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="AutomationIntegrationServiceR4_4Binding" type="tns:AutomationIntegrationServiceR4_4">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getHUDetails">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkAlternateComponents">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="nextJob">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateRelease">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="assignImagerId">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reenterImagerId">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startViscom">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="complete">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="completeICT">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="assemble">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="logParameters">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="logNonConformance">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeResourceState">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="logResourceState">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="signOff">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="assignSerialId">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isAlive">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="closeContainer">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pack">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createContainer">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reopenContainer">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSfcStatus">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="assembleNonBomComponent">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startBomDetails">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSFCOperation">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSFCPath">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSFCRecipe">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rebookPanelEdgeNC">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNCsByFilter">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeSensitiveInventory">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutomationException">
+        <soap:fault use="literal" name="AutomationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutomationIntegrationServiceR4_4">
+    <wsdl:port name="AutomationIntegrationPort4" binding="tns:AutomationIntegrationServiceR4_4Binding">
+      <address location="http://iemames019:50000/AutomationIntegrationServiceR4_4/AutomationIntegrationBean4" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

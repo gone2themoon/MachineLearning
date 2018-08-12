@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4DDEDB3-44E1-4EEF-A976-1EE44BD24B7A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Oven_AI</RootNamespace>
+    <AssemblyName>Oven_AI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Email.cs" />
+    <Compile Include="ManufacturingExecution.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\FileUtilities.cs" />
+    <Compile Include="Properties\LogConverter.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AutomationInegrationBean5\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ChangeProductionServiceWSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\iemames001_ProductionServiceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\AutomationIntegrationBean5.wsdl" />
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.assembleNonBomComponentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.assembleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.assignImagerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.assignSerialIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.changeResourceStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.checkAlternateComponentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.checkInResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.checkOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.checkRecipeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.checkUserCertificateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.closeContainerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.completeICTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.completeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.completeSfcQuickResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.createContainerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getHUDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getLabelDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getNCsByFilterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getRenamedSfcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getSFCOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getSFCPathResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getSFCRecipeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getSfcStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getShopOrderDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getTimeSensitiveInventoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.getToolDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.handleExceptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.handleGenericParamsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.isAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.isContainerEmptyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.logNonConformanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.logParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.logResourceStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.nextJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.packResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.rebookPanelEdgeNCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.reenterImagerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.reopenContainerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.setupToolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.signOffResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.splitSfcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.startBomDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.startResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.startViscomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.unpackAllContainerMembersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.validateBOMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.validateReleaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AutomationInegrationBean5\Oven_AI.AutomationInegrationBean5.validateStartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChangeProductionServiceWSService\ChangeProductionServiceWSService.wsdl" />
+    <None Include="Service References\ChangeProductionServiceWSService\Oven_AI.ChangeProductionServiceWSService.changeProductionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChangeProductionServiceWSService\Oven_AI.ChangeProductionServiceWSService.validateChangeProductionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.AlarmConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.CompleteConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.NCLogConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.PackConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.ParametricConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.ScrapConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.SerializeConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.SignoffConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.SplitConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.StartByItemConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.StartConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\Oven_AI.iemames001_ProductionServiceService.WIPChangeConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\iemames001_ProductionServiceService\ProductionServiceService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AutomationInegrationBean5\" />
+    <WCFMetadataStorage Include="Service References\ChangeProductionServiceWSService\" />
+    <WCFMetadataStorage Include="Service References\iemames001_ProductionServiceService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AutomationInegrationBean5\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AutomationInegrationBean5\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AutomationInegrationBean5\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChangeProductionServiceWSService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChangeProductionServiceWSService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChangeProductionServiceWSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\iemames001_ProductionServiceService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\iemames001_ProductionServiceService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\iemames001_ProductionServiceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;ProductionProcessingInBinding&quot; /&gt;" bindingType="basicHttpBinding" name="ProductionProcessingInBinding" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://iemames001:50000/manufacturing-services/ProductionServiceService&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ProductionProcessingInBinding&quot; contract=&quot;iemames001_ProductionServiceService.ProductionProcessingIn&quot; name=&quot;ProductionServicePCOPort&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://iemames001:50000/manufacturing-services/ProductionServiceService&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ProductionProcessingInBinding&quot; contract=&quot;iemames001_ProductionServiceService.ProductionProcessingIn&quot; name=&quot;ProductionServicePCOPort&quot; /&gt;" contractName="iemames001_ProductionServiceService.ProductionProcessingIn" name="ProductionServicePCOPort" />
+  </endpoints>
+</configurationSnapshot>

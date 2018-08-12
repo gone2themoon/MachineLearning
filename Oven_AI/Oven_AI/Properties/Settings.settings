@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Oven_AI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SourceFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\GEM\local\pcb</Value>
+    </Setting>
+    <Setting Name="DestinationFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\GEM\machine_learning\training</Value>
+    </Setting>
+    <Setting Name="ArchiveFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\GEM\machine_learning\processed</Value>
+    </Setting>
+    <Setting Name="Interval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="PythonPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\ian-h\AppData\Local\Programs\Python\Python36-32\Python.exe</Value>
+    </Setting>
+    <Setting Name="PythonScript" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Kostal\Machine_Learning_Processing\Linear_Regression_with_REHM.py</Value>
+    </Setting>
+    <Setting Name="Zone1SetTemp" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">210</Value>
+    </Setting>
+    <Setting Name="Zone2SetTemp" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">240</Value>
+    </Setting>
+    <Setting Name="Zone3SetTemp" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">275</Value>
+    </Setting>
+    <Setting Name="senderEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">i.horgan@kostal.com</Value>
+    </Setting>
+    <Setting Name="receiverEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">i.horgan@kostal.com;a.baliyan@kostal.com</Value>
+    </Setting>
+    <Setting Name="emailSubject" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Error Detected at RehmOven</Value>
+    </Setting>
+    <Setting Name="emailClient" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.20.2.153</Value>
+    </Setting>
+    <Setting Name="zone1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HtTopP1</Value>
+    </Setting>
+    <Setting Name="zone2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HtTopP2</Value>
+    </Setting>
+    <Setting Name="zone3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HtTopP3</Value>
+    </Setting>
+    <Setting Name="mesRoute" Type="System.String" Scope="User">
+      <Value Profile="(Default)">REWORK</Value>
+    </Setting>
+    <Setting Name="mesOperation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">REWORK</Value>
+    </Setting>
+    <Setting Name="iTolerance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="mesResource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">20180811</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

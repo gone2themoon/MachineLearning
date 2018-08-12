@@ -1,0 +1,14 @@
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.csprojAssemblyReference.cache
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.csproj.CoreCompileInputs.cache
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\bin\Debug\Oven_AI.exe.config
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\bin\Debug\Oven_AI.exe
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\bin\Debug\Oven_AI.pdb
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.csproj.CopyComplete
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.exe
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.pdb
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\Oven_AI\Oven_AI\bin\Debug\Oven_AI.exe.config
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.exe
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.pdb
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\Oven_AI\Oven_AI\bin\Debug\Oven_AI.exe
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\Oven_AI\Oven_AI\bin\Debug\Oven_AI.pdb
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\Oven_AI\Oven_AI\obj\Debug\Oven_AI.csprojResolveAssemblyReference.cache

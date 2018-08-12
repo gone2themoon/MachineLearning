@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="mepapi:com:sap:me:production" targetNamespace="mepapi:com:sap:me:production" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://www.sap.com/me/production" elementFormDefault="qualified" targetNamespace="http://www.sap.com/me/production" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ChangeProductionRequest">
+        <xs:sequence>
+          <xs:element name="changeProductionContextType" type="tns:ChangeProductionContext" />
+          <xs:element minOccurs="0" name="operationPlacementType" type="tns:OperationPlacementTypeEnum" />
+          <xs:element minOccurs="0" name="designatedOperation" type="xs:string" />
+          <xs:element minOccurs="0" name="designatedStepId" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="sfcList" type="xs:string" />
+          <xs:element minOccurs="0" name="ecoRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="eco" type="xs:string" />
+          <xs:element minOccurs="0" name="commentsRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="comments" type="xs:string" />
+          <xs:element minOccurs="0" name="allowDoneSfcs" type="xs:boolean" />
+          <xs:element minOccurs="0" name="allowPackedSfcs" type="xs:boolean" />
+          <xs:element minOccurs="0" name="allowReworkSfcRouterChange" type="xs:boolean" />
+          <xs:element minOccurs="0" name="adjustBuildOrderQuantity" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeProductionContext">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="newBom" type="xs:string" />
+          <xs:element minOccurs="0" name="newBomRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="newItem" type="xs:string" />
+          <xs:element minOccurs="0" name="newItemRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="newRouter" type="xs:string" />
+          <xs:element minOccurs="0" name="newRouterRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="newShopOrder" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeProductionResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="sfcProductionContextList" type="tns:SfcProductionContext" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SfcProductionContext">
+        <xs:sequence>
+          <xs:element name="sfcRef" type="xs:string" />
+          <xs:element minOccurs="0" name="operationRef" type="xs:string" />
+          <xs:element minOccurs="0" name="bomRef" type="xs:string" />
+          <xs:element name="itemRef" type="xs:string" />
+          <xs:element minOccurs="0" name="routerRef" type="xs:string" />
+          <xs:element minOccurs="0" name="shopOrderRef" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OperationPlacementTypeEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SPECIFIED_OPERATION" />
+          <xs:enumeration value="FIRST_OPERATION" />
+          <xs:enumeration value="UNCOMPLETE_OPERATION" />
+          <xs:enumeration value="CURRENT_OPERATION" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema xmlns:ns1="http://www.sap.com/me/production" targetNamespace="mepapi:com:sap:me:production" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.sap.com/me/production" />
+      <xs:element name="ResolvedBusinessException" type="tns:ResolvedBusinessException" />
+      <xs:element name="changeProduction" type="tns:changeProduction" />
+      <xs:element name="changeProductionResponse" type="tns:changeProductionResponse" />
+      <xs:element name="validateChangeProduction" type="tns:validateChangeProduction" />
+      <xs:element name="validateChangeProductionResponse" type="tns:validateChangeProductionResponse" />
+      <xs:complexType name="changeProduction">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="Site" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="Request" type="ns1:ChangeProductionRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeProductionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="Response" type="ns1:ChangeProductionResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResolvedBusinessException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="faultInfo" type="xs:string" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateChangeProduction">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="Site" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="Request" type="ns1:ChangeProductionRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateChangeProductionResponse">
+        <xs:sequence />
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="changeProductionIn">
+    <wsdl:part name="parameters" element="tns:changeProduction" />
+  </wsdl:message>
+  <wsdl:message name="changeProductionOut">
+    <wsdl:part name="changeProductionResponse" element="tns:changeProductionResponse" />
+  </wsdl:message>
+  <wsdl:message name="changeProductionFault">
+    <wsdl:part name="ResolvedBusinessException" element="tns:ResolvedBusinessException" />
+  </wsdl:message>
+  <wsdl:message name="validateChangeProductionIn">
+    <wsdl:part name="parameters" element="tns:validateChangeProduction" />
+  </wsdl:message>
+  <wsdl:message name="validateChangeProductionOut">
+    <wsdl:part name="validateChangeProductionResponse" element="tns:validateChangeProductionResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateChangeProductionFault">
+    <wsdl:part name="ResolvedBusinessException" element="tns:ResolvedBusinessException" />
+  </wsdl:message>
+  <wsdl:portType name="ChangeProductionServiceWS">
+    <wsdl:operation name="changeProduction" parameterOrder="parameters">
+      <wsdl:input message="tns:changeProductionIn" />
+      <wsdl:output message="tns:changeProductionOut" />
+      <wsdl:fault name="ResolvedBusinessException" message="tns:changeProductionFault" />
+    </wsdl:operation>
+    <wsdl:operation name="validateChangeProduction" parameterOrder="parameters">
+      <wsdl:input message="tns:validateChangeProductionIn" />
+      <wsdl:output message="tns:validateChangeProductionOut" />
+      <wsdl:fault name="ResolvedBusinessException" message="tns:validateChangeProductionFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ChangeProductionServiceWSBinding" type="tns:ChangeProductionServiceWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="changeProduction">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResolvedBusinessException">
+        <soap:fault use="literal" name="ResolvedBusinessException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateChangeProduction">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResolvedBusinessException">
+        <soap:fault use="literal" name="ResolvedBusinessException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChangeProductionServiceWSService">
+    <wsdl:port name="ChangeProductionServiceWSPort" binding="tns:ChangeProductionServiceWSBinding">
+      <address location="http://ieabmes011:50200/manufacturing-papiservices/ChangeProductionServiceWSService" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

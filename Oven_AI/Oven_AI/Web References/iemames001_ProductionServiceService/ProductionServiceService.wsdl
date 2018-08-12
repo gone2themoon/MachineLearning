@@ -1,0 +1,2359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://sap.com/xi/ME" targetNamespace="http://sap.com/xi/ME" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://sap.com/xi/SAPGlobal/GDT" elementFormDefault="qualified" targetNamespace="http://sap.com/xi/SAPGlobal/GDT" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="BasicBusinessDocumentMessageHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="tns:BusinessDocumentMessageID" />
+          <xs:element minOccurs="0" name="UUID" type="xs:string" />
+          <xs:element minOccurs="0" name="ReferenceID" type="tns:BusinessDocumentMessageID" />
+          <xs:element minOccurs="0" name="ReferenceUUID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BusinessDocumentMessageID">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="schemeID" type="xs:string" />
+            <xs:attribute name="schemeAgencyID" type="xs:string" />
+            <xs:attribute name="schemeAgencySchemeAgencyID" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LEN20Name">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Text">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="INTEGERQuantity">
+        <xs:simpleContent>
+          <xs:extension base="xs:decimal">
+            <xs:attribute name="unitCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="DateTime">
+        <xs:simpleContent>
+          <xs:extension base="xs:anySimpleType">
+            <xs:attribute name="timeZoneCode" type="xs:string" />
+            <xs:attribute name="daylightSavingTimeIndicator" type="xs:boolean" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LEN40Name">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LEN60Name">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="EXTENDEDName">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LEN30Name">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LEN25Name">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LocationID">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="schemeID" type="xs:string" />
+            <xs:attribute name="schemeAgencyID" type="xs:string" />
+            <xs:attribute name="schemeAgencySchemeID" type="xs:string" />
+            <xs:attribute name="schemeAgencySchemeAgencyID" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ns1="http://sap.com/xi/SAPGlobal/GDT" elementFormDefault="qualified" targetNamespace="http://sap.com/xi/ME" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://sap.com/xi/SAPGlobal/GDT" />
+      <xs:element name="StandardMessageFault" type="tns:BusinessException" />
+      <xs:complexType name="WIPChangeRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="WIPChangeRequest" type="tns:WIPChangeRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WIPChangeRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:WIPChangeRequestSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SiteRef">
+        <xs:sequence>
+          <xs:element name="Site" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WIPChangeRequestSFC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="AdjOrgBldQty" type="ns1:Text" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="Comments" type="ns1:Text" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ActivityRef">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Activity" type="ns1:LEN20Name" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SFCRef">
+        <xs:all>
+          <xs:element name="Sfc" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ShopOrderRef">
+        <xs:all>
+          <xs:element name="ShopOrder" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="UserRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="UserId" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="WIPChangeConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="WIPChangeResponse" type="tns:WIPChangeResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WIPChangeResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcResponse" type="tns:WIPChangeResponseSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WIPChangeResponseSFC">
+        <xs:sequence>
+          <xs:element name="BomRef" type="tns:BOMRef" />
+          <xs:element name="HoldId" type="ns1:INTEGERQuantity" />
+          <xs:element name="ItemRef" type="tns:ItemRef" />
+          <xs:element name="RouterRef" type="tns:RouterRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BOMRef">
+        <xs:all>
+          <xs:element name="Bom" type="xs:string" />
+          <xs:element minOccurs="0" name="Revision" type="xs:string" />
+          <xs:element minOccurs="0" name="BomType" type="tns:BOMType" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ItemRef">
+        <xs:all>
+          <xs:element name="Item" type="xs:string" />
+          <xs:element minOccurs="0" name="Revision" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="RouterRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="Router" type="xs:string" />
+          <xs:element minOccurs="0" name="Revision" type="xs:string" />
+          <xs:element minOccurs="0" name="RouterType" type="tns:RouterType" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="StartByItemRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="StartByItemRequest" type="tns:StartByItemRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartByItemRequest">
+        <xs:sequence>
+          <xs:element name="StartByItem" type="xs:boolean" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="ItemRef" type="tns:ItemRef" />
+          <xs:element name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WorkCenterRef" type="tns:WorkCenterRef" />
+          <xs:element minOccurs="0" name="Rework" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="ReturnScrappedLocations" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResourceRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="Resource" type="tns:ResourceID" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ResourceID">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="schemeID" type="xs:string" />
+            <xs:attribute name="schemeAgencyID" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="OperationRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="Operation" type="xs:string" />
+          <xs:element name="Revision" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="WorkCenterRef">
+        <xs:all>
+          <xs:element name="WorkCenter" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="StartByItemConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="StartBIResponse" type="tns:StartByItemResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartByItemResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcResponse" type="tns:StartResponseSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartResponseSFC">
+        <xs:sequence>
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element name="ItemRef" type="tns:ItemRef" />
+          <xs:element name="RouterRef" type="tns:RouterRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="StepId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ScrappedLocation" type="tns:ScrappedLocation" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ScrappedLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Location" type="ns1:LEN20Name" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SplitRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="SplitRequest" type="tns:SplitRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SplitRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:SplitRequestSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SplitRequestSFC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NewSFC" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SplitConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="SplitResponse" type="tns:SplitResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SplitResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Splited" type="tns:SplitResponseSplited" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SplitResponseSplited">
+        <xs:sequence>
+          <xs:element name="NewSFC" type="tns:SFCRef" />
+          <xs:element name="NewSfcQty" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SerializeRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="SerializeRequest" type="tns:SerializeRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SerializeRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:SerializeRequestSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SerializeRequestSFC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NewSFC">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="SfcRef" type="tns:SFCRef" />
+                <xs:element minOccurs="0" name="Location" type="ns1:LEN20Name" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SerializeConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="SerializeResponse" type="tns:SerializeResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SerializeResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcSerialized" type="tns:SerializeResponseSerialized" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SerializeResponseSerialized">
+        <xs:sequence>
+          <xs:element name="NewSFC" type="tns:SFCRef" />
+          <xs:element name="NewSFCQuantity" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SignoffRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="SignOffRequest" type="tns:SignOffRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SignOffRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:SignOffRequestSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SignOffRequestSFC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" default="false" name="DoLaborOff" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SignoffConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="SignOffResponse" type="tns:SignOffResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SignOffResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcResponse" type="tns:SignOffResponseSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SignOffResponseSFC">
+        <xs:sequence>
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element name="ItemRef" type="tns:ItemRef" />
+          <xs:element name="QueuedStep" type="tns:RouterStepRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RouterStepRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="RouterRef" type="tns:RouterRef" />
+          <xs:element name="StepId" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ReserveSerialNumbersRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ReserveSerialNumbersRequest" type="tns:ReserveSerialNumbersRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReserveSerialNumbersRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReserveSerialNumbersConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ReserveSerialNumbersResponse" type="tns:ReserveSerialNumbersResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReserveSerialNumbersResponse">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="OriginalSfc" type="tns:SFCRef" />
+          <xs:element name="SfcList" type="tns:ReserveSerialNumbersResponseSFCList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReserveSerialNumbersResponseSFCList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcId" type="tns:SFCId" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SFCId">
+        <xs:sequence>
+          <xs:element name="Sfc" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ScrapRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ScrapRequest" type="tns:ScrapRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ScrapRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:ScrapRequestSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ScrapRequestSFC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element name="StatusRef" type="tns:StatusRef" />
+          <xs:element minOccurs="0" name="OriginalStatusRef" type="tns:StatusRef" />
+          <xs:element minOccurs="0" name="ScrapCode" type="ns1:Text" />
+          <xs:element minOccurs="0" name="ScrapDone" type="ns1:Text" />
+          <xs:element minOccurs="0" name="ScrapInWork" type="ns1:Text" />
+          <xs:element minOccurs="0" name="LogResourceRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="LogOperationRef" type="tns:OperationRef" />
+          <xs:element minOccurs="0" name="LogRouterRef" type="tns:RouterRef" />
+          <xs:element minOccurs="0" name="LogStepId" type="xs:string" />
+          <xs:element minOccurs="0" name="LogRework" type="xs:string" />
+          <xs:element minOccurs="0" name="DisableUpdateSfcRouting" type="ns1:Text" />
+          <xs:element minOccurs="0" name="DisableProductionLog" type="ns1:Text" />
+          <xs:element minOccurs="0" name="Location" type="ns1:LEN20Name" />
+          <xs:element minOccurs="0" name="AdjustShopOrderRelQty" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusRef">
+        <xs:all>
+          <xs:element name="Status" type="tns:SHORTName" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="SHORTName">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ScrapConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ScrapResponse" type="tns:ScrapResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ScrapResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcResponse" type="tns:ScrapResponseSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ScrapResponseSFC">
+        <xs:sequence>
+          <xs:element name="ScrappedEntireSfc" type="ns1:Text" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParametricRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ParametricRequest" type="tns:ParametricRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParametricRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="Activity" type="ns1:LEN40Name" />
+          <xs:element minOccurs="0" name="CustomerID" type="ns1:LEN40Name" />
+          <xs:element minOccurs="0" name="DcGroupRef" type="tns:DCGroupRef" />
+          <xs:element minOccurs="0" name="Diagnostics" type="ns1:LEN20Name" />
+          <xs:element minOccurs="0" name="ItemRef" type="tns:ItemRef" />
+          <xs:element minOccurs="0" name="LotId" type="tns:Name" />
+          <xs:element minOccurs="0" name="OperationRef" type="tns:OperationRef" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ParametricCustom" type="tns:CustomField" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ParametricMeasure" type="tns:ParametricMeasure" />
+          <xs:element minOccurs="0" name="ProgramId" type="tns:Name" />
+          <xs:element minOccurs="0" name="ProgramRev" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="SetupTimeMs" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="SfcRef" type="tns:SFCRef" />
+          <xs:element minOccurs="0" name="ShiftRef" type="tns:UserShiftRef" />
+          <xs:element minOccurs="0" name="StartTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="StopTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="TestPlanRef" type="tns:TestPlanRef" />
+          <xs:element minOccurs="0" name="TestStatus" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="TesterHwRev" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="TesterTestSeq" type="ns1:LEN60Name" />
+          <xs:element minOccurs="0" name="TesterTestSeqRev" type="xs:string" />
+          <xs:element minOccurs="0" name="TimesProcessed" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="Type" type="ns1:Text" />
+          <xs:element minOccurs="0" name="UnloadTimeMs" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="WorkCenterRef" type="tns:WorkCenterRef" />
+          <xs:element minOccurs="0" name="ElapsedTime" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="RouterRef" type="tns:RouterRef" />
+          <xs:element minOccurs="0" name="ShopOrder" type="xs:string" />
+          <xs:element minOccurs="0" name="TesterType" type="ns1:LEN60Name" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DCGroupRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="Revision" type="xs:string" />
+          <xs:element name="DcGroup" type="ns1:LEN20Name" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="Name">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="CustomField">
+        <xs:sequence>
+          <xs:element name="Attribute" type="ns1:LEN60Name" />
+          <xs:element name="Value" type="ns1:Text" />
+          <xs:element minOccurs="0" name="Description" type="tns:Description" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Description">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ParametricMeasure">
+        <xs:all>
+          <xs:element minOccurs="0" name="ParametricRef" type="tns:ParametricRef" />
+          <xs:element minOccurs="0" name="Sequence" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="Actual" type="ns1:Text" />
+          <xs:element minOccurs="0" name="ActualNumber" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="ComponentRef" type="tns:ItemRef" />
+          <xs:element minOccurs="0" name="ComponentType" type="tns:Name" />
+          <xs:element minOccurs="0" name="DataType" type="tns:DCGroupDataType" />
+          <xs:element minOccurs="0" name="DcComment" type="ns1:EXTENDEDName" />
+          <xs:element minOccurs="0" name="DcGroupRevision" type="xs:string" />
+          <xs:element minOccurs="0" name="DcParameterRef" type="tns:DCParameterRef" />
+          <xs:element minOccurs="0" name="Description" type="tns:Description" />
+          <xs:element minOccurs="0" name="Edited" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EditedUserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="ElapsedTime" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="Expected" type="ns1:Text" />
+          <xs:element minOccurs="0" name="FirstSequence" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="HighLimit" type="tns:MEDIUMName" />
+          <xs:element minOccurs="0" name="InternalMeasureId" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="LowLimit" type="tns:MEDIUMName" />
+          <xs:element name="MeasureGroup" type="ns1:LEN25Name" />
+          <xs:element name="MeasureName" type="ns1:LEN30Name" />
+          <xs:element minOccurs="0" name="MeasureStatus" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="MeasureType" type="ns1:LEN20Name" />
+          <xs:element minOccurs="0" name="Memo" type="ns1:Text" />
+          <xs:element minOccurs="0" name="OriginalActual" type="ns1:Text" />
+          <xs:element minOccurs="0" name="OriginalDCComment" type="ns1:EXTENDEDName" />
+          <xs:element minOccurs="0" name="OriginalTestDateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="OverrideUserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="ParaContext" type="tns:ParaContext" />
+          <xs:element minOccurs="0" name="Pin" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="TestDateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="TransactionId" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="UnitOfMeasure" type="ns1:LEN20Name" />
+          <xs:element minOccurs="0" name="UsedLimitSequence" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="ParametricMeasureCustom" type="tns:ParametricMeasureCustom" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ParametricRef">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="TransactionId" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DCParameterRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="DcGroupRef" type="tns:DCGroupRef" />
+          <xs:element name="ParameterName" type="ns1:LEN30Name" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="MEDIUMName">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="SHORTDescription">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ParaContext">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SfcRef" type="tns:SFCRef" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParametricMeasureCustom">
+        <xs:all>
+          <xs:element minOccurs="0" name="ParametricMeasureRef" type="tns:ParametricMeasureRef" />
+          <xs:element minOccurs="0" name="Sequence" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="Edited" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EditedUserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="OriginalDateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="OriginalPropertyValue" type="ns1:LEN25Name" />
+          <xs:element minOccurs="0" name="ParaContext" type="tns:ParaContext" />
+          <xs:element minOccurs="0" name="PropertyName" type="ns1:LEN25Name" />
+          <xs:element minOccurs="0" name="PropertyStatus" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="PropertyType" type="tns:SHORTDescription" />
+          <xs:element minOccurs="0" name="PropertyValue" type="ns1:LEN25Name" />
+          <xs:element minOccurs="0" name="TransactionId" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="UnitOfMeasure" type="ns1:LEN20Name" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ParametricMeasureRef">
+        <xs:sequence>
+          <xs:element name="Sequence" type="ns1:INTEGERQuantity" />
+          <xs:element name="ParametricRef" type="tns:ParametricRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserShiftRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="Name" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="TestPlanRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="TestPlan" type="tns:SHORTDescription" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ParametricConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="parametricResponse" type="tns:ParametricResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParametricResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="TransactionId" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PackRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ContainerRequest" type="tns:ContainerRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContainerRequest">
+        <xs:sequence>
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="ContainerRef" type="tns:ContainerRef" />
+          <xs:element name="ContainerNumberRef" type="tns:ContainerNumberRef" />
+          <xs:element name="State" type="ns1:Text" />
+          <xs:element minOccurs="0" name="Complete" type="ns1:Text" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomDataValue" type="tns:CustomField" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ContainerContent" type="tns:ContainerRequestContainerMember" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContainerRef">
+        <xs:all>
+          <xs:element name="Name" type="ns1:LEN40Name" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ContainerNumberRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ContainerNumber" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ContainerRequestContainerMember">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SfcRef" type="tns:SFCRef" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ContainerNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomDataValue" type="tns:CustomField" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProcessLotRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ProcessLot" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="PackConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ContainerResponse" type="tns:ContainerResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContainerResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ContainerContent" type="tns:ContainerResponseContainerMember" />
+          <xs:element name="ContainerNumber" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContainerResponseContainerMember">
+        <xs:sequence>
+          <xs:element name="Item" type="xs:string" />
+          <xs:element name="Quantity" type="ns1:INTEGERQuantity" />
+          <xs:element name="SfcContainer" type="ns1:Text" />
+          <xs:element name="ShopOrder" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCLogRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="NCLogRequest" type="tns:NCLogRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCLogRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="NcLog" type="tns:NCLog" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element minOccurs="0" name="AssemblyIncidentNumber" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="BatchIncidentNumber" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="Comments" type="ns1:Text" />
+          <xs:element minOccurs="0" name="Component" type="tns:ItemRef" />
+          <xs:element minOccurs="0" name="ComponentSfc" type="tns:SFCRef" />
+          <xs:element minOccurs="0" name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="DefectCount" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="FailureId" type="ns1:LEN40Name" />
+          <xs:element minOccurs="0" name="Identifier" type="ns1:LEN40Name" />
+          <xs:element minOccurs="0" name="IncidentNumberRef" type="tns:IncidentNumberRef" />
+          <xs:element minOccurs="0" name="Location" type="ns1:LEN20Name" />
+          <xs:element minOccurs="0" name="NcCodeRef" type="tns:NCCodeRef" />
+          <xs:element name="NcContext" type="tns:NCContext" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NcCustomData" type="tns:CustomField" />
+          <xs:element name="NcOwner" type="tns:Owner" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element minOccurs="0" name="ParentNCData" type="tns:NCDataRef" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RefDes" type="xs:string" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="RootCauseOper" type="tns:OperationRef" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IncidentNumberRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="IncidentNumber" type="tns:Name" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="NCCodeRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="NcCode" type="tns:SHORTName" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="NCContext">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Owner">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="UserRef" type="tns:UserRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCDataRef">
+        <xs:all>
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="Sequence" type="ns1:INTEGERQuantity" />
+          <xs:element name="IncidentDateTime" type="ns1:DateTime" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="NCLogConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="NCLogResponse" type="tns:NCLogResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCLogResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="NcDataRef" type="tns:NCDataRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCLogCompleteRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="NCLogCompleteRequest" type="tns:NCLogCompleteRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCLogCompleteRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="NcIncidentDone" type="tns:NCIncidentDoneRequest" />
+          <xs:element name="NcLog" type="tns:NCLog" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCIncidentDoneRequest">
+        <xs:sequence>
+          <xs:element name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element minOccurs="0" name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="DispositionGroupMemberRef" type="tns:DispositionGroupMemberRef" />
+          <xs:element minOccurs="0" name="FutureHoldStep" type="tns:RouterStepRef" />
+          <xs:element minOccurs="0" name="Location" type="ns1:LEN20Name" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="RouterRef" type="tns:RouterRef" />
+          <xs:element minOccurs="0" name="RouterStepRef" type="tns:RouterStepRef" />
+          <xs:element minOccurs="0" name="TotalDefectCount" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="ScrapComponentOption" type="ns1:Text" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="SizeColumn" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NcBeginDateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="NcCodeRef" type="tns:NCCodeRef" />
+          <xs:element name="NcContext" type="tns:NCContext" />
+          <xs:element maxOccurs="unbounded" name="NcData" type="tns:NCDataRef" />
+          <xs:element name="NcEndDateTime" type="ns1:DateTime" />
+          <xs:element name="NcOwner" type="tns:Owner" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DispositionGroupMemberRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="DispositionGroupRef" type="tns:DispositionGroupRef" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="Sequence" type="ns1:INTEGERQuantity" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="DispositionGroupRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="DispositionGroup" type="ns1:LEN40Name" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="NCLogCompleteConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="NCLogCompleteResponse" type="tns:NCLogCompleteResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCLogCompleteResponse">
+        <xs:sequence>
+          <xs:element name="Done" type="xs:boolean" />
+          <xs:element maxOccurs="unbounded" name="NcDataRef" type="tns:NCDataRef" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="Quantity" type="ns1:INTEGERQuantity" />
+          <xs:element name="Scrapped" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCIncidentDoneRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="NCIncidentDoneRequest" type="tns:NCIncidentDoneRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCIncidentDoneConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="NCIncidentDoneResponse" type="tns:NCIncidentDoneResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NCIncidentDoneResponse">
+        <xs:sequence>
+          <xs:element name="Done" type="xs:boolean" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="Quantity" type="ns1:INTEGERQuantity" />
+          <xs:element name="Scrapped" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompleteRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="CompleteRequest" type="tns:CompleteRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompleteRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:CompleteRequestSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompleteRequestSFC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="NextStepRef" type="tns:NextStepRef" />
+          <xs:element minOccurs="0" name="QuickComplete" type="ns1:Text" />
+          <xs:element minOccurs="0" name="LaborOffOtherUser" type="xs:string" />
+          <xs:element minOccurs="0" name="DateStarted" type="ns1:DateTime" />
+          <xs:element minOccurs="0" default="false" name="DoLaborOff" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NextStepRef">
+        <xs:all>
+          <xs:element name="StepId" type="xs:string" />
+          <xs:element minOccurs="0" name="RouterRef" type="tns:RouterRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="CompleteConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="CompleteResponse" type="tns:CompleteResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompleteResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcResponse" type="tns:CompleteResponseSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompleteResponseSFC">
+        <xs:sequence>
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element name="Done" type="xs:boolean" />
+          <xs:element name="ItemRef" type="tns:ItemRef" />
+          <xs:element name="Quantity" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="QueuedStep" type="tns:CompleteResponseQueuedStep" />
+          <xs:element name="Rework" type="xs:boolean" />
+          <xs:element name="RouterRef" type="tns:RouterRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="StepCompleted" type="ns1:Text" />
+          <xs:element name="StepId" type="xs:string" />
+          <xs:element name="TimesProcessed" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CompleteResponseQueuedStep">
+        <xs:sequence>
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="RouterRef" type="tns:RouterRef" />
+          <xs:element name="StepId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="AssembleComponentsRequest" type="tns:AssembleComponentsRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsRequest">
+        <xs:sequence>
+          <xs:element name="CheckOperation" type="xs:boolean" />
+          <xs:element name="Event" type="ns1:LEN40Name" />
+          <xs:element maxOccurs="unbounded" name="AssembleIdentifier" type="tns:AssembleComponentsRequestIdentifierObject" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="ParentSfc" type="tns:SFCRef" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsRequestIdentifierObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AssyDataValue" type="tns:CustomField" />
+          <xs:element name="Identifier" type="ns1:LEN40Name" />
+          <xs:element minOccurs="0" name="Location" type="ns1:LocationID" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RefDes" type="xs:string" />
+          <xs:element minOccurs="0" name="Revision" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="AssembleComponentsResponse" type="tns:AssembleComponentsResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="InvalidIdentifier" type="tns:AssembleComponentsResponseInvalidIdentifiers" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsResponseInvalidIdentifiers">
+        <xs:sequence>
+          <xs:element name="Error" type="ns1:Text" />
+          <xs:element name="Identifier" type="xs:string" />
+          <xs:element name="RefDes" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsTransactionalRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="AssembleComponentsRequest" type="tns:AssembleComponentsRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssembleComponentsTransactionalConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="StartRequest" type="tns:StartRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ReturnScrappedLocations" type="xs:boolean" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:StartRequestSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartRequestSFC">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+          <xs:element name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="OperationRef" type="tns:OperationRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WorkCenterRef" type="tns:WorkCenterRef" />
+          <xs:element minOccurs="0" name="Rework" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" default="false" name="DoLaborOn" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="StartResponse" type="tns:StartResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StartResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcResponse" type="tns:StartResponseSFC" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeProductionRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ChangeProductionRequest" type="tns:ChangeProductionRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeProductionRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:ChangeProductionRequestSFC" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element name="NewItem" type="tns:ItemRef" />
+          <xs:element name="NewRouter" type="tns:RouterRef" />
+          <xs:element name="PlacementOperation" type="tns:OperationRef" />
+          <xs:element name="StepId" type="xs:string" />
+          <xs:element name="NewBom" type="tns:BOMRef" />
+          <xs:element name="NewShopOrder" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ECO" type="tns:LONGName" />
+          <xs:element minOccurs="0" name="AdjustOrderBuildQtyDown" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Comments" type="ns1:Text" />
+          <xs:element minOccurs="0" name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeProductionRequestSFC">
+        <xs:sequence>
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LONGName">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ChangeProductionConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ChangeProductionResponse" type="tns:ChangeProductionResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeProductionResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SfcResponse" type="tns:ChangeProductionRequestSFC" />
+          <xs:element name="NewBom" type="tns:BOMRef" />
+          <xs:element name="NewItem" type="tns:ItemRef" />
+          <xs:element name="NewRouter" type="tns:RouterRef" />
+          <xs:element name="NewShopOrder" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlarmRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="AlarmRequest" type="tns:AlarmRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlarmRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ItemRef" type="tns:ItemRef" />
+          <xs:element minOccurs="0" name="SfcRef" type="tns:SFCRef" />
+          <xs:element minOccurs="0" name="WorkCenterRef" type="tns:WorkCenterRef" />
+          <xs:element minOccurs="0" name="Shift" type="xs:string" />
+          <xs:element name="AlarmType" type="ns1:LEN40Name" />
+          <xs:element minOccurs="0" name="MessageText" type="ns1:Text" />
+          <xs:element minOccurs="0" name="OperationRef" type="tns:OperationRef" />
+          <xs:element minOccurs="0" name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlarmConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="AlarmResponse" type="tns:AlarmResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlarmResponse">
+        <xs:sequence>
+          <xs:element name="AlarmId" type="ns1:EXTENDEDName" />
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element name="Status" type="tns:StatusRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceImmediateHoldRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="PlaceImmediateHoldRequest" type="tns:PlaceImmediateHoldRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceImmediateHoldRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element maxOccurs="unbounded" name="SfcRequest" type="tns:PlaceImmediateHoldRequestSFC" />
+          <xs:element minOccurs="0" name="HoldItem" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HoldShopOrder" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HoldRouter" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ExpectedReleaseDateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element name="HoldStatus" type="tns:StatusRef" />
+          <xs:element name="Comments" type="ns1:Text" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="ResponseSfcListMaxSize" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceImmediateHoldRequestSFC">
+        <xs:sequence>
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReasonCodeList">
+        <xs:sequence>
+          <xs:element name="ReasonCode" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceImmediateHoldConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="PlaceImmediateHoldResponse" type="tns:PlaceImmediateHoldResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceImmediateHoldResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SfcResponse" type="tns:ChangeProductionRequestSFC" />
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element name="HeldSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element name="HoldId" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element name="ProcessedSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="ItemList" type="tns:ItemList" />
+          <xs:element maxOccurs="unbounded" name="ShopOrderList" type="tns:ShopOrderList" />
+          <xs:element maxOccurs="unbounded" name="RouterList" type="tns:RouterList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ItemList">
+        <xs:sequence>
+          <xs:element name="Item" type="tns:ItemRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ShopOrderList">
+        <xs:sequence>
+          <xs:element name="ShopOrder" type="tns:ShopOrderRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RouterList">
+        <xs:sequence>
+          <xs:element name="Router" type="tns:RouterRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveImmediateHoldRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="RemoveImmediateHoldRequest" type="tns:RemoveImmediateHoldRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveImmediateHoldRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element name="HoldId" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SfcRequest" type="tns:RemoveImmediateHoldRequestSFC" />
+          <xs:element minOccurs="0" name="ReleaseItem" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReleaseShopOrder" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReleaseRouter" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element minOccurs="0" name="Comments" type="ns1:Text" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="ResponseSfcListMaxSize" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveImmediateHoldRequestSFC">
+        <xs:sequence>
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveImmediateHoldConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="RemoveImmediateHoldResponse" type="tns:RemoveImmediateHoldResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveImmediateHoldResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SfcResponse" type="tns:RemoveImmediateHoldRequestSFC" />
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element name="HoldId" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" type="tns:ItemRef" />
+          <xs:element name="ProcessedSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element name="ReleasedSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Router" type="tns:RouterRef" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleasedShopOrder" type="tns:ShopOrderRef" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceFutureHoldRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="PlaceFutureHoldRequest" type="tns:PlaceFutureHoldRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceFutureHoldRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SfcRequest" type="tns:PlaceFutureHoldRequestSFC" />
+          <xs:element minOccurs="0" name="HoldItem" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HoldShopOrder" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HoldRouter" type="xs:boolean" />
+          <xs:element maxOccurs="unbounded" name="OperationList" type="tns:OperationList" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element minOccurs="0" name="ExpectedReleaseDateTime" type="ns1:DateTime" />
+          <xs:element name="Comments" type="ns1:Text" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="ResponseSfcListMaxSize" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceFutureHoldRequestSFC">
+        <xs:sequence>
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OperationList">
+        <xs:sequence>
+          <xs:element name="Operation" type="xs:string" />
+          <xs:element name="StepId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceFutureHoldConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="PlaceFutureHoldResponse" type="tns:PlaceFutureHoldResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PlaceFutureHoldResponse">
+        <xs:sequence>
+          <xs:element name="HoldId" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SfcResponse" type="tns:PlaceFutureHoldRequestSFC" />
+          <xs:element name="HeldSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element maxOccurs="unbounded" name="OperationList" type="tns:OperationList" />
+          <xs:element name="ProcessedSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="ProcessLotRef" type="tns:ProcessLotRef" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="ItemList" type="tns:ItemList" />
+          <xs:element maxOccurs="unbounded" name="ShopOrderList" type="tns:ShopOrderList" />
+          <xs:element maxOccurs="unbounded" name="RouterList" type="tns:RouterList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveFutureHoldRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="RemoveFutureHoldRequest" type="tns:RemoveFutureHoldRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveFutureHoldRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element name="HoldId" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SfcRequest" type="tns:RemoveFutureHoldRequestSFC" />
+          <xs:element maxOccurs="unbounded" name="RemoveOperationList" type="tns:OperationList" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element minOccurs="0" name="Comments" type="ns1:Text" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element minOccurs="0" name="ResponseSfcListMaxSize" type="ns1:INTEGERQuantity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveFutureHoldRequestSFC">
+        <xs:sequence>
+          <xs:element name="SfcRef" type="tns:SFCRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveFutureHoldConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="RemoveFutureHoldResponse" type="tns:RemoveFutureHoldResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveFutureHoldResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SfcResponse" type="tns:RemoveFutureHoldRequestSFC" />
+          <xs:element name="HoldId" type="ns1:INTEGERQuantity" />
+          <xs:element name="ProcessedSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReasonCodeList" type="tns:ReasonCodeList" />
+          <xs:element maxOccurs="unbounded" name="RemoveOperationList" type="tns:OperationList" />
+          <xs:element name="RemovedSfcQty" type="ns1:INTEGERQuantity" />
+          <xs:element name="DateTime" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="ShopOrderRef" type="tns:ShopOrderRef" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryReceiptRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="InventoryReceiptRequest" type="tns:InventoryReceiptRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryReceiptRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="InventoryReceipt" type="tns:InventoryReceipt" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryReceipt">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element minOccurs="0" name="InventoryId" type="xs:string" />
+          <xs:element name="ItemRef" type="tns:ItemRef" />
+          <xs:element name="QuantityOnHand" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WorkCenterLocRef" type="tns:WorkCenterRef" />
+          <xs:element minOccurs="0" name="WorkCenterLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OperationLocRef" type="tns:OperationRef" />
+          <xs:element minOccurs="0" name="OperationLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ResourceLocRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="ResourceLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ShopOrderLocRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ShopOrderLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InventoryAssyData" type="tns:InventoryAssyData" />
+          <xs:element minOccurs="0" name="MaxFloorLife" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="ExpirationDate" type="ns1:DateTime" />
+          <xs:element minOccurs="0" name="StorageLocationRef" type="tns:StorageLocationRef" />
+          <xs:element minOccurs="0" name="ShopOrderSetByErp" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ErpInventory" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryAssyData">
+        <xs:all>
+          <xs:element minOccurs="0" name="InventoryRef" type="tns:InventoryRef" />
+          <xs:element minOccurs="0" name="DataAttribute" type="ns1:Text" />
+          <xs:element name="DataField" type="ns1:Text" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="InventoryRef">
+        <xs:all>
+          <xs:element name="InventoryId" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="StorageLocationRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="StorageLocation" type="xs:string" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="InventoryReceiptConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="InventoryReceiptResponse" type="tns:InventoryReceiptResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryReceiptResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InventoryId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryUpdateRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="InventoryUpdateRequest" type="tns:InventoryUpdateRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryUpdateRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="InventoryUpdate" type="tns:InventoryUpdate" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryUpdate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="InventoryId" type="xs:string" />
+          <xs:element minOccurs="0" name="StatusRef" type="tns:StatusRef" />
+          <xs:element minOccurs="0" name="ItemRef" type="tns:ItemRef" />
+          <xs:element name="ReasonCodeRef" type="tns:ReasonCodeRef" />
+          <xs:element name="Comments" type="ns1:Text" />
+          <xs:element minOccurs="0" name="QuantityOnHand" type="ns1:INTEGERQuantity" />
+          <xs:element minOccurs="0" name="StorageLocationRef" type="tns:StorageLocationRef" />
+          <xs:element minOccurs="0" name="WorkCenterLocRef" type="tns:WorkCenterRef" />
+          <xs:element minOccurs="0" name="WorkCenterLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OperationLocRef" type="tns:OperationRef" />
+          <xs:element minOccurs="0" name="OperationLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ResourceLocRef" type="tns:ResourceRef" />
+          <xs:element minOccurs="0" name="ResourceLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ShopOrderLocRef" type="tns:ShopOrderRef" />
+          <xs:element minOccurs="0" name="ShopOrderLocRes" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InventoryAssyData" type="tns:InventoryAssyData" />
+          <xs:element name="modifiedDateTime" type="ns1:DateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReasonCodeRef">
+        <xs:all>
+          <xs:element minOccurs="0" name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ReasonCode" type="xs:string" />
+          <xs:element name="Category" type="ns1:LEN20Name" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="InventoryUpdateConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="InventoryUpdateResponse" type="tns:InventoryUpdateResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InventoryUpdateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InventoryId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeEquipmentStatusRequestMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ChangeEquipmentStatusRequest" type="tns:ChangeEquipmentStatusRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeEquipmentStatusRequest">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element maxOccurs="unbounded" name="ChangeStatusResource" type="tns:ChangeStatusRequestResource" />
+          <xs:element maxOccurs="unbounded" name="ChangeStatusWorkCenter" type="tns:ChangeStatusRequestWorkCenter" />
+          <xs:element maxOccurs="unbounded" name="ChangeStatusToolNumber" type="tns:ChangeStatusRequestToolNumber" />
+          <xs:element maxOccurs="unbounded" name="ChangeStatusToolGroup" type="tns:ChangeStatusRequestToolGroup" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeStatusRequestResource">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="ResourceRef" type="tns:ResourceRef" />
+          <xs:element name="StatusRef" type="tns:StatusRef" />
+          <xs:element name="ReasonCodeRef" type="tns:ReasonCodeRef" />
+          <xs:element name="Comments" type="ns1:Text" />
+          <xs:element name="Immediate" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeStatusRequestWorkCenter">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="WorkCenterRef" type="tns:WorkCenterRef" />
+          <xs:element name="StatusRef" type="tns:StatusRef" />
+          <xs:element name="ReasonCodeRef" type="tns:ReasonCodeRef" />
+          <xs:element name="Comments" type="ns1:Text" />
+          <xs:element name="Immediate" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeStatusRequestToolNumber">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="ToolNumberRef" type="tns:ToolNumberRef" />
+          <xs:element name="StatusRef" type="tns:StatusRef" />
+          <xs:element name="ReasonCodeRef" type="tns:ReasonCodeRef" />
+          <xs:element name="Comments" type="ns1:Text" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ToolNumberRef">
+        <xs:all>
+          <xs:element name="ToolNumber" type="tns:Name" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ChangeStatusRequestToolGroup">
+        <xs:sequence>
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+          <xs:element name="ActivityRef" type="tns:ActivityRef" />
+          <xs:element name="UserRef" type="tns:UserRef" />
+          <xs:element name="ToolGroupRef" type="tns:ToolGroupRef" />
+          <xs:element name="StatusRef" type="tns:StatusRef" />
+          <xs:element name="ReasonCodeRef" type="tns:ReasonCodeRef" />
+          <xs:element name="Comments" type="ns1:Text" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ToolGroupRef">
+        <xs:all>
+          <xs:element name="ToolGroup" type="tns:Name" />
+          <xs:element name="SiteRef" type="tns:SiteRef" />
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="ChangeEquipmentStatusConfirmationMessage_sync">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageHeader" type="ns1:BasicBusinessDocumentMessageHeader" />
+          <xs:element name="ChangeEquipmentStatusResponse" type="tns:ChangeEquipmentStatusResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeEquipmentStatusResponse">
+        <xs:sequence>
+          <xs:element name="Result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BusinessException">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="unqualified" name="errorCode" type="xs:decimal" />
+          <xs:element minOccurs="0" form="unqualified" name="errorMessage" type="ns1:Text" />
+          <xs:element minOccurs="0" form="unqualified" name="location" type="xs:string" />
+          <xs:element minOccurs="0" form="unqualified" name="stackTraceList" type="tns:StackTraceList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StackTraceList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="StackTraceElement" type="tns:StackTraceElement" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StackTraceElement">
+        <xs:all>
+          <xs:element minOccurs="0" name="FileName" type="xs:string" />
+          <xs:element minOccurs="0" name="ClassName" type="xs:string" />
+          <xs:element minOccurs="0" name="MethodName" type="xs:string" />
+          <xs:element minOccurs="0" name="LineNumber" type="xs:decimal" />
+        </xs:all>
+      </xs:complexType>
+      <xs:simpleType name="BOMType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="U" />
+          <xs:enumeration value="H" />
+          <xs:enumeration value="S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RouterType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="U" />
+          <xs:enumeration value="H" />
+          <xs:enumeration value="S" />
+          <xs:enumeration value="C" />
+          <xs:enumeration value="N" />
+          <xs:enumeration value="D" />
+          <xs:enumeration value="M" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="DCGroupDataType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="N" />
+          <xs:enumeration value="B" />
+          <xs:enumeration value="T" />
+          <xs:enumeration value="F" />
+          <xs:enumeration value="P" />
+          <xs:enumeration value="O" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element xmlns:ctr0="http://sap.com/xi/ME" name="NCLogCompleteConfirmation_sync" nillable="true" type="ctr0:NCLogCompleteConfirmationMessage_sync" />
+      <xs:element xmlns:ctr1="http://sap.com/xi/ME" name="AlarmRequest_sync" nillable="true" type="ctr1:AlarmRequestMessage_sync" />
+      <xs:element xmlns:ctr2="http://sap.com/xi/ME" name="ParametricConfirmation_sync" nillable="true" type="ctr2:ParametricConfirmationMessage_sync" />
+      <xs:element xmlns:ctr3="http://sap.com/xi/ME" name="ReserveSerialNumbersConfirmation_sync" nillable="true" type="ctr3:ReserveSerialNumbersConfirmationMessage_sync" />
+      <xs:element xmlns:ctr4="http://sap.com/xi/ME" name="RemoveFutureHoldRequest_sync" nillable="true" type="ctr4:RemoveFutureHoldRequestMessage_sync" />
+      <xs:element xmlns:ctr5="http://sap.com/xi/ME" name="AlarmConfirmation_sync" nillable="true" type="ctr5:AlarmConfirmationMessage_sync" />
+      <xs:element xmlns:ctr6="http://sap.com/xi/ME" name="SerializeConfirmation_sync" nillable="true" type="ctr6:SerializeConfirmationMessage_sync" />
+      <xs:element xmlns:ctr7="http://sap.com/xi/ME" name="StartConfirmation_sync" nillable="true" type="ctr7:StartConfirmationMessage_sync" />
+      <xs:element xmlns:ctr8="http://sap.com/xi/ME" name="ParametricRequest_sync" nillable="true" type="ctr8:ParametricRequestMessage_sync" />
+      <xs:element xmlns:ctr9="http://sap.com/xi/ME" name="NCLogConfirmation_sync" nillable="true" type="ctr9:NCLogConfirmationMessage_sync" />
+      <xs:element xmlns:ctr10="http://sap.com/xi/ME" name="InventoryReceiptRequest_sync" nillable="true" type="ctr10:InventoryReceiptRequestMessage_sync" />
+      <xs:element xmlns:ctr11="http://sap.com/xi/ME" name="StartRequest_sync" nillable="true" type="ctr11:StartRequestMessage_sync" />
+      <xs:element xmlns:ctr12="http://sap.com/xi/ME" name="RemoveFutureHoldConfirmation_sync" nillable="true" type="ctr12:RemoveFutureHoldConfirmationMessage_sync" />
+      <xs:element xmlns:ctr13="http://sap.com/xi/ME" name="SplitRequest_sync" nillable="true" type="ctr13:SplitRequestMessage_sync" />
+      <xs:element xmlns:ctr14="http://sap.com/xi/ME" name="PlaceImmediateHoldConfirmation_sync" nillable="true" type="ctr14:PlaceImmediateHoldConfirmationMessage_sync" />
+      <xs:element xmlns:ctr15="http://sap.com/xi/ME" name="InventoryUpdateRequest_sync" nillable="true" type="ctr15:InventoryUpdateRequestMessage_sync" />
+      <xs:element xmlns:ctr16="http://sap.com/xi/ME" name="SplitConfirmation_sync" nillable="true" type="ctr16:SplitConfirmationMessage_sync" />
+      <xs:element xmlns:ctr17="http://sap.com/xi/ME" name="PackRequest_sync" nillable="true" type="ctr17:PackRequestMessage_sync" />
+      <xs:element xmlns:ctr18="http://sap.com/xi/ME" name="AssembleComponentsTransactionalRequest_sync" nillable="true" type="ctr18:AssembleComponentsTransactionalRequestMessage_sync" />
+      <xs:element xmlns:ctr19="http://sap.com/xi/ME" name="ReserveSerialNumbersRequest_sync" nillable="true" type="ctr19:ReserveSerialNumbersRequestMessage_sync" />
+      <xs:element xmlns:ctr20="http://sap.com/xi/ME" name="ChangeProductionRequest_sync" nillable="true" type="ctr20:ChangeProductionRequestMessage_sync" />
+      <xs:element xmlns:ctr21="http://sap.com/xi/ME" name="CompleteRequest_sync" nillable="true" type="ctr21:CompleteRequestMessage_sync" />
+      <xs:element xmlns:ctr22="http://sap.com/xi/ME" name="PlaceFutureHoldConfirmation_sync" nillable="true" type="ctr22:PlaceFutureHoldConfirmationMessage_sync" />
+      <xs:element xmlns:ctr23="http://sap.com/xi/ME" name="ChangeEquipmentStatusConfirmation_sync" nillable="true" type="ctr23:ChangeEquipmentStatusConfirmationMessage_sync" />
+      <xs:element xmlns:ctr24="http://sap.com/xi/ME" name="ChangeEquipmentStatusRequest_sync" nillable="true" type="ctr24:ChangeEquipmentStatusRequestMessage_sync" />
+      <xs:element xmlns:ctr25="http://sap.com/xi/ME" name="InventoryReceiptConfirmation_sync" nillable="true" type="ctr25:InventoryReceiptConfirmationMessage_sync" />
+      <xs:element xmlns:ctr26="http://sap.com/xi/ME" name="WIPChangeRequest_sync" nillable="true" type="ctr26:WIPChangeRequestMessage_sync" />
+      <xs:element xmlns:ctr27="http://sap.com/xi/ME" name="ScrapConfirmation_sync" nillable="true" type="ctr27:ScrapConfirmationMessage_sync" />
+      <xs:element xmlns:ctr28="http://sap.com/xi/ME" name="InventoryUpdateConfirmation_sync" nillable="true" type="ctr28:InventoryUpdateConfirmationMessage_sync" />
+      <xs:element xmlns:ctr29="http://sap.com/xi/ME" name="StartByItemConfirmation_sync" nillable="true" type="ctr29:StartByItemConfirmationMessage_sync" />
+      <xs:element xmlns:ctr30="http://sap.com/xi/ME" name="NCLogRequest_sync" nillable="true" type="ctr30:NCLogRequestMessage_sync" />
+      <xs:element xmlns:ctr31="http://sap.com/xi/ME" name="NCIncidentDoneRequest_sync" nillable="true" type="ctr31:NCIncidentDoneRequestMessage_sync" />
+      <xs:element xmlns:ctr32="http://sap.com/xi/ME" name="AssembleComponentsConfirmation_sync" nillable="true" type="ctr32:AssembleComponentsConfirmationMessage_sync" />
+      <xs:element xmlns:ctr33="http://sap.com/xi/ME" name="AssembleComponentsTransactionalConfirmation_sync" nillable="true" type="ctr33:AssembleComponentsTransactionalConfirmationMessage_sync" />
+      <xs:element xmlns:ctr34="http://sap.com/xi/ME" name="ScrapRequest_sync" nillable="true" type="ctr34:ScrapRequestMessage_sync" />
+      <xs:element xmlns:ctr35="http://sap.com/xi/ME" name="ChangeProductionConfirmation_sync" nillable="true" type="ctr35:ChangeProductionConfirmationMessage_sync" />
+      <xs:element xmlns:ctr36="http://sap.com/xi/ME" name="PackConfirmation_sync" nillable="true" type="ctr36:PackConfirmationMessage_sync" />
+      <xs:element xmlns:ctr37="http://sap.com/xi/ME" name="WIPChangeConfirmation_sync" nillable="true" type="ctr37:WIPChangeConfirmationMessage_sync" />
+      <xs:element xmlns:ctr38="http://sap.com/xi/ME" name="StartByItemRequest_sync" nillable="true" type="ctr38:StartByItemRequestMessage_sync" />
+      <xs:element xmlns:ctr39="http://sap.com/xi/ME" name="PlaceImmediateHoldRequest_sync" nillable="true" type="ctr39:PlaceImmediateHoldRequestMessage_sync" />
+      <xs:element xmlns:ctr40="http://sap.com/xi/ME" name="SerializeRequest_sync" nillable="true" type="ctr40:SerializeRequestMessage_sync" />
+      <xs:element xmlns:ctr41="http://sap.com/xi/ME" name="PlaceFutureHoldRequest_sync" nillable="true" type="ctr41:PlaceFutureHoldRequestMessage_sync" />
+      <xs:element xmlns:ctr42="http://sap.com/xi/ME" name="NCLogCompleteRequest_sync" nillable="true" type="ctr42:NCLogCompleteRequestMessage_sync" />
+      <xs:element xmlns:ctr43="http://sap.com/xi/ME" name="RemoveImmediateHoldRequest_sync" nillable="true" type="ctr43:RemoveImmediateHoldRequestMessage_sync" />
+      <xs:element xmlns:ctr44="http://sap.com/xi/ME" name="NCIncidentDoneConfirmation_sync" nillable="true" type="ctr44:NCIncidentDoneConfirmationMessage_sync" />
+      <xs:element xmlns:ctr45="http://sap.com/xi/ME" name="RemoveImmediateHoldConfirmation_sync" nillable="true" type="ctr45:RemoveImmediateHoldConfirmationMessage_sync" />
+      <xs:element xmlns:ctr46="http://sap.com/xi/ME" name="CompleteConfirmation_sync" nillable="true" type="ctr46:CompleteConfirmationMessage_sync" />
+      <xs:element xmlns:ctr47="http://sap.com/xi/ME" name="AssembleComponentsRequest_sync" nillable="true" type="ctr47:AssembleComponentsRequestMessage_sync" />
+      <xs:element xmlns:ctr48="http://sap.com/xi/ME" name="SignoffRequest_sync" nillable="true" type="ctr48:SignoffRequestMessage_sync" />
+      <xs:element xmlns:ctr49="http://sap.com/xi/ME" name="SignoffConfirmation_sync" nillable="true" type="ctr49:SignoffConfirmationMessage_sync" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="WIPChangeIn">
+    <wsdl:part name="WIPChangeRequest_sync" element="tns:WIPChangeRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="WIPChangeOut">
+    <wsdl:part name="WIPChangeConfirmation_sync" element="tns:WIPChangeConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="WIPChangeFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="StartByItemIn">
+    <wsdl:part name="StartByItemRequest_sync" element="tns:StartByItemRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="StartByItemOut">
+    <wsdl:part name="StartByItemConfirmation_sync" element="tns:StartByItemConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="StartByItemFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="SplitIn">
+    <wsdl:part name="SplitRequest_sync" element="tns:SplitRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="SplitOut">
+    <wsdl:part name="SplitConfirmation_sync" element="tns:SplitConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="SplitFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="SerializeIn">
+    <wsdl:part name="SerializeRequest_sync" element="tns:SerializeRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="SerializeOut">
+    <wsdl:part name="SerializeConfirmation_sync" element="tns:SerializeConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="SerializeFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="SignoffIn">
+    <wsdl:part name="SignoffRequest_sync" element="tns:SignoffRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="SignoffOut">
+    <wsdl:part name="SignoffConfirmation_sync" element="tns:SignoffConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="SignoffFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="ReserveSerialNumbersExtendedIn">
+    <wsdl:part name="ReserveSerialNumbersRequest_sync" element="tns:ReserveSerialNumbersRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="ReserveSerialNumbersExtendedOut">
+    <wsdl:part name="ReserveSerialNumbersConfirmation_sync" element="tns:ReserveSerialNumbersConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="ReserveSerialNumbersExtendedFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="ScrapIn">
+    <wsdl:part name="ScrapRequest_sync" element="tns:ScrapRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="ScrapOut">
+    <wsdl:part name="ScrapConfirmation_sync" element="tns:ScrapConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="ScrapFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="LogParametricDataIn">
+    <wsdl:part name="ParametricRequest_sync" element="tns:ParametricRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogParametricDataOut">
+    <wsdl:part name="ParametricConfirmation_sync" element="tns:ParametricConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogParametricDataFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="PackIn">
+    <wsdl:part name="PackRequest_sync" element="tns:PackRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="PackOut">
+    <wsdl:part name="PackConfirmation_sync" element="tns:PackConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="PackFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="LogNCIn">
+    <wsdl:part name="NCLogRequest_sync" element="tns:NCLogRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogNCOut">
+    <wsdl:part name="NCLogConfirmation_sync" element="tns:NCLogConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogNCFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="LogNCCompleteIn">
+    <wsdl:part name="NCLogCompleteRequest_sync" element="tns:NCLogCompleteRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogNCCompleteOut">
+    <wsdl:part name="NCLogCompleteConfirmation_sync" element="tns:NCLogCompleteConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogNCCompleteFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="LogNCIncidentDoneIn">
+    <wsdl:part name="NCIncidentDoneRequest_sync" element="tns:NCIncidentDoneRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogNCIncidentDoneOut">
+    <wsdl:part name="NCIncidentDoneConfirmation_sync" element="tns:NCIncidentDoneConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="LogNCIncidentDoneFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="CompleteIn">
+    <wsdl:part name="CompleteRequest_sync" element="tns:CompleteRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="CompleteOut">
+    <wsdl:part name="CompleteConfirmation_sync" element="tns:CompleteConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="CompleteFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="AssembleComponentsIn">
+    <wsdl:part name="AssembleComponentsRequest_sync" element="tns:AssembleComponentsRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="AssembleComponentsOut">
+    <wsdl:part name="AssembleComponentsConfirmation_sync" element="tns:AssembleComponentsConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="AssembleComponentsFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="AssembleComponentsTransactionalIn">
+    <wsdl:part name="AssembleComponentsTransactionalRequest_sync" element="tns:AssembleComponentsTransactionalRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="AssembleComponentsTransactionalOut">
+    <wsdl:part name="AssembleComponentsTransactionalConfirmation_sync" element="tns:AssembleComponentsTransactionalConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="AssembleComponentsTransactionalFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="StartIn">
+    <wsdl:part name="StartRequest_sync" element="tns:StartRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="StartOut">
+    <wsdl:part name="StartConfirmation_sync" element="tns:StartConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="StartFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProductionIn">
+    <wsdl:part name="ChangeProductionRequest_sync" element="tns:ChangeProductionRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProductionOut">
+    <wsdl:part name="ChangeProductionConfirmation_sync" element="tns:ChangeProductionConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProductionFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="AlarmIn">
+    <wsdl:part name="AlarmRequest_sync" element="tns:AlarmRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="AlarmOut">
+    <wsdl:part name="AlarmConfirmation_sync" element="tns:AlarmConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="AlarmFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="PlaceImmediateHoldIn">
+    <wsdl:part name="PlaceImmediateHoldRequest_sync" element="tns:PlaceImmediateHoldRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="PlaceImmediateHoldOut">
+    <wsdl:part name="PlaceImmediateHoldConfirmation_sync" element="tns:PlaceImmediateHoldConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="PlaceImmediateHoldFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="RemoveImmediateHoldIn">
+    <wsdl:part name="RemoveImmediateHoldRequest_sync" element="tns:RemoveImmediateHoldRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="RemoveImmediateHoldOut">
+    <wsdl:part name="RemoveImmediateHoldConfirmation_sync" element="tns:RemoveImmediateHoldConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="RemoveImmediateHoldFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="PlaceFutureHoldIn">
+    <wsdl:part name="PlaceFutureHoldRequest_sync" element="tns:PlaceFutureHoldRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="PlaceFutureHoldOut">
+    <wsdl:part name="PlaceFutureHoldConfirmation_sync" element="tns:PlaceFutureHoldConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="PlaceFutureHoldFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFutureHoldIn">
+    <wsdl:part name="RemoveFutureHoldRequest_sync" element="tns:RemoveFutureHoldRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFutureHoldOut">
+    <wsdl:part name="RemoveFutureHoldConfirmation_sync" element="tns:RemoveFutureHoldConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFutureHoldFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="AddInventoryReceiptIn">
+    <wsdl:part name="InventoryReceiptRequest_sync" element="tns:InventoryReceiptRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="AddInventoryReceiptOut">
+    <wsdl:part name="InventoryReceiptConfirmation_sync" element="tns:InventoryReceiptConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="AddInventoryReceiptFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInventoryIn">
+    <wsdl:part name="InventoryUpdateRequest_sync" element="tns:InventoryUpdateRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInventoryOut">
+    <wsdl:part name="InventoryUpdateConfirmation_sync" element="tns:InventoryUpdateConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInventoryFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:message name="ChangeEquipmentStatusIn">
+    <wsdl:part name="ChangeEquipmentStatusRequest_sync" element="tns:ChangeEquipmentStatusRequest_sync" />
+  </wsdl:message>
+  <wsdl:message name="ChangeEquipmentStatusOut">
+    <wsdl:part name="ChangeEquipmentStatusConfirmation_sync" element="tns:ChangeEquipmentStatusConfirmation_sync" />
+  </wsdl:message>
+  <wsdl:message name="ChangeEquipmentStatusFault">
+    <wsdl:part name="StandardMessageFault" element="tns:StandardMessageFault" />
+  </wsdl:message>
+  <wsdl:portType name="ProductionProcessingIn">
+    <wsdl:operation name="WIPChange" parameterOrder="WIPChangeRequest_sync">
+      <wsdl:input message="tns:WIPChangeIn" />
+      <wsdl:output message="tns:WIPChangeOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:WIPChangeFault" />
+    </wsdl:operation>
+    <wsdl:operation name="StartByItem" parameterOrder="StartByItemRequest_sync">
+      <wsdl:input message="tns:StartByItemIn" />
+      <wsdl:output message="tns:StartByItemOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:StartByItemFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Split" parameterOrder="SplitRequest_sync">
+      <wsdl:input message="tns:SplitIn" />
+      <wsdl:output message="tns:SplitOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:SplitFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Serialize" parameterOrder="SerializeRequest_sync">
+      <wsdl:input message="tns:SerializeIn" />
+      <wsdl:output message="tns:SerializeOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:SerializeFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Signoff" parameterOrder="SignoffRequest_sync">
+      <wsdl:input message="tns:SignoffIn" />
+      <wsdl:output message="tns:SignoffOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:SignoffFault" />
+    </wsdl:operation>
+    <wsdl:operation name="ReserveSerialNumbersExtended" parameterOrder="ReserveSerialNumbersRequest_sync">
+      <wsdl:input message="tns:ReserveSerialNumbersExtendedIn" />
+      <wsdl:output message="tns:ReserveSerialNumbersExtendedOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:ReserveSerialNumbersExtendedFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Scrap" parameterOrder="ScrapRequest_sync">
+      <wsdl:input message="tns:ScrapIn" />
+      <wsdl:output message="tns:ScrapOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:ScrapFault" />
+    </wsdl:operation>
+    <wsdl:operation name="LogParametricData" parameterOrder="ParametricRequest_sync">
+      <wsdl:input message="tns:LogParametricDataIn" />
+      <wsdl:output message="tns:LogParametricDataOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:LogParametricDataFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Pack" parameterOrder="PackRequest_sync">
+      <wsdl:input message="tns:PackIn" />
+      <wsdl:output message="tns:PackOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:PackFault" />
+    </wsdl:operation>
+    <wsdl:operation name="LogNC" parameterOrder="NCLogRequest_sync">
+      <wsdl:input message="tns:LogNCIn" />
+      <wsdl:output message="tns:LogNCOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:LogNCFault" />
+    </wsdl:operation>
+    <wsdl:operation name="LogNCComplete" parameterOrder="NCLogCompleteRequest_sync">
+      <wsdl:input message="tns:LogNCCompleteIn" />
+      <wsdl:output message="tns:LogNCCompleteOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:LogNCCompleteFault" />
+    </wsdl:operation>
+    <wsdl:operation name="LogNCIncidentDone" parameterOrder="NCIncidentDoneRequest_sync">
+      <wsdl:input message="tns:LogNCIncidentDoneIn" />
+      <wsdl:output message="tns:LogNCIncidentDoneOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:LogNCIncidentDoneFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Complete" parameterOrder="CompleteRequest_sync">
+      <wsdl:input message="tns:CompleteIn" />
+      <wsdl:output message="tns:CompleteOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:CompleteFault" />
+    </wsdl:operation>
+    <wsdl:operation name="AssembleComponents" parameterOrder="AssembleComponentsRequest_sync">
+      <wsdl:input message="tns:AssembleComponentsIn" />
+      <wsdl:output message="tns:AssembleComponentsOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:AssembleComponentsFault" />
+    </wsdl:operation>
+    <wsdl:operation name="AssembleComponentsTransactional" parameterOrder="AssembleComponentsTransactionalRequest_sync">
+      <wsdl:input message="tns:AssembleComponentsTransactionalIn" />
+      <wsdl:output message="tns:AssembleComponentsTransactionalOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:AssembleComponentsTransactionalFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Start" parameterOrder="StartRequest_sync">
+      <wsdl:input message="tns:StartIn" />
+      <wsdl:output message="tns:StartOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:StartFault" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProduction" parameterOrder="ChangeProductionRequest_sync">
+      <wsdl:input message="tns:ChangeProductionIn" />
+      <wsdl:output message="tns:ChangeProductionOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:ChangeProductionFault" />
+    </wsdl:operation>
+    <wsdl:operation name="Alarm" parameterOrder="AlarmRequest_sync">
+      <wsdl:input message="tns:AlarmIn" />
+      <wsdl:output message="tns:AlarmOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:AlarmFault" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaceImmediateHold" parameterOrder="PlaceImmediateHoldRequest_sync">
+      <wsdl:input message="tns:PlaceImmediateHoldIn" />
+      <wsdl:output message="tns:PlaceImmediateHoldOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:PlaceImmediateHoldFault" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveImmediateHold" parameterOrder="RemoveImmediateHoldRequest_sync">
+      <wsdl:input message="tns:RemoveImmediateHoldIn" />
+      <wsdl:output message="tns:RemoveImmediateHoldOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:RemoveImmediateHoldFault" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaceFutureHold" parameterOrder="PlaceFutureHoldRequest_sync">
+      <wsdl:input message="tns:PlaceFutureHoldIn" />
+      <wsdl:output message="tns:PlaceFutureHoldOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:PlaceFutureHoldFault" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFutureHold" parameterOrder="RemoveFutureHoldRequest_sync">
+      <wsdl:input message="tns:RemoveFutureHoldIn" />
+      <wsdl:output message="tns:RemoveFutureHoldOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:RemoveFutureHoldFault" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInventoryReceipt" parameterOrder="InventoryReceiptRequest_sync">
+      <wsdl:input message="tns:AddInventoryReceiptIn" />
+      <wsdl:output message="tns:AddInventoryReceiptOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:AddInventoryReceiptFault" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInventory" parameterOrder="InventoryUpdateRequest_sync">
+      <wsdl:input message="tns:UpdateInventoryIn" />
+      <wsdl:output message="tns:UpdateInventoryOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:UpdateInventoryFault" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEquipmentStatus" parameterOrder="ChangeEquipmentStatusRequest_sync">
+      <wsdl:input message="tns:ChangeEquipmentStatusIn" />
+      <wsdl:output message="tns:ChangeEquipmentStatusOut" />
+      <wsdl:fault name="StandardMessageFault" message="tns:ChangeEquipmentStatusFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ProductionProcessingInBinding" type="tns:ProductionProcessingIn">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WIPChange">
+      <soap:operation soapAction="http://sap.com/xi/ME/WIPChange" />
+      <wsdl:input>
+        <soap:body use="literal" parts="WIPChangeRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StartByItem">
+      <soap:operation soapAction="http://sap.com/xi/ME/StartByItem" />
+      <wsdl:input>
+        <soap:body use="literal" parts="StartByItemRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Split">
+      <soap:operation soapAction="http://sap.com/xi/ME/Split" />
+      <wsdl:input>
+        <soap:body use="literal" parts="SplitRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Serialize">
+      <soap:operation soapAction="http://sap.com/xi/ME/Serialize" />
+      <wsdl:input>
+        <soap:body use="literal" parts="SerializeRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Signoff">
+      <soap:operation soapAction="http://sap.com/xi/ME/Signoff" />
+      <wsdl:input>
+        <soap:body use="literal" parts="SignoffRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReserveSerialNumbersExtended">
+      <soap:operation soapAction="http://sap.com/xi/ME/ReserveSerialNumbersExtended" />
+      <wsdl:input>
+        <soap:body use="literal" parts="ReserveSerialNumbersRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Scrap">
+      <soap:operation soapAction="http://sap.com/xi/ME/Scrap" />
+      <wsdl:input>
+        <soap:body use="literal" parts="ScrapRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogParametricData">
+      <soap:operation soapAction="http://sap.com/xi/ME/LogParametricData" />
+      <wsdl:input>
+        <soap:body use="literal" parts="ParametricRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Pack">
+      <soap:operation soapAction="http://sap.com/xi/ME/Pack" />
+      <wsdl:input>
+        <soap:body use="literal" parts="PackRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogNC">
+      <soap:operation soapAction="http://sap.com/xi/ME/LogNC" />
+      <wsdl:input>
+        <soap:body use="literal" parts="NCLogRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogNCComplete">
+      <soap:operation soapAction="http://sap.com/xi/ME/LogNCComplete" />
+      <wsdl:input>
+        <soap:body use="literal" parts="NCLogCompleteRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogNCIncidentDone">
+      <soap:operation soapAction="http://sap.com/xi/ME/LogNCIncidentDone" />
+      <wsdl:input>
+        <soap:body use="literal" parts="NCIncidentDoneRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Complete">
+      <soap:operation soapAction="http://sap.com/xi/ME/Complete" />
+      <wsdl:input>
+        <soap:body use="literal" parts="CompleteRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AssembleComponents">
+      <soap:operation soapAction="http://sap.com/xi/ME/AssembleComponents" />
+      <wsdl:input>
+        <soap:body use="literal" parts="AssembleComponentsRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AssembleComponentsTransactional">
+      <soap:operation soapAction="http://sap.com/xi/ME/AssembleComponentsTransactional" />
+      <wsdl:input>
+        <soap:body use="literal" parts="AssembleComponentsTransactionalRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Start">
+      <soap:operation soapAction="http://sap.com/xi/ME/Start" />
+      <wsdl:input>
+        <soap:body use="literal" parts="StartRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProduction">
+      <soap:operation soapAction="http://sap.com/xi/ME/ChangeProduction" />
+      <wsdl:input>
+        <soap:body use="literal" parts="ChangeProductionRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Alarm">
+      <soap:operation soapAction="http://sap.com/xi/ME/Alarm" />
+      <wsdl:input>
+        <soap:body use="literal" parts="AlarmRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceImmediateHold">
+      <soap:operation soapAction="http://sap.com/xi/ME/PlaceImmediateHold" />
+      <wsdl:input>
+        <soap:body use="literal" parts="PlaceImmediateHoldRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveImmediateHold">
+      <soap:operation soapAction="http://sap.com/xi/ME/RemoveImmediateHold" />
+      <wsdl:input>
+        <soap:body use="literal" parts="RemoveImmediateHoldRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceFutureHold">
+      <soap:operation soapAction="http://sap.com/xi/ME/PlaceFutureHold" />
+      <wsdl:input>
+        <soap:body use="literal" parts="PlaceFutureHoldRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFutureHold">
+      <soap:operation soapAction="http://sap.com/xi/ME/RemoveFutureHold" />
+      <wsdl:input>
+        <soap:body use="literal" parts="RemoveFutureHoldRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddInventoryReceipt">
+      <soap:operation soapAction="http://sap.com/xi/ME/AddInventoryReceipt" />
+      <wsdl:input>
+        <soap:body use="literal" parts="InventoryReceiptRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInventory">
+      <soap:operation soapAction="http://sap.com/xi/ME/UpdateInventory" />
+      <wsdl:input>
+        <soap:body use="literal" parts="InventoryUpdateRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEquipmentStatus">
+      <soap:operation soapAction="http://sap.com/xi/ME/ChangeEquipmentStatus" />
+      <wsdl:input>
+        <soap:body use="literal" parts="ChangeEquipmentStatusRequest_sync" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StandardMessageFault">
+        <soap:fault use="literal" name="StandardMessageFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductionServiceService">
+    <wsdl:port name="ProductionServicePCOPort" binding="tns:ProductionProcessingInBinding">
+      <address location="http://iemames001:50000/manufacturing-services/ProductionServiceService" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

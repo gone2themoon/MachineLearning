@@ -1,0 +1,19 @@
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.pdb
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.MachineLearning_Service.resources
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.csproj.GenerateResource.cache
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.csproj.CoreCompileInputs.cache
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.exe
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.pdb
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.ProjectInstaller.resources
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe.config
+C:\Users\horgan08\Desktop\Delete Me\MscSoftware\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.csprojAssemblyReference.cache
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe.config
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.exe
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.pdb
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.exe
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\bin\Debug\MachineLearning_Service.pdb
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.csprojResolveAssemblyReference.cache
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.MachineLearning_Service.resources
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.ProjectInstaller.resources
+C:\Users\ian-h\Documents\MscSoftware_Dev\YEAR-2\COMP9028 - Comp Research Project Implem\Resources\MachineLearning_Service\MachineLearning_Service\obj\Debug\MachineLearning_Service.csproj.GenerateResource.Cache

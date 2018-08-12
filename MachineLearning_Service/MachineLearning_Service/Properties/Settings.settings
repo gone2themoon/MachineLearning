@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MachineLearning_Service.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SourceFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\GEM\local\pcb</Value>
+    </Setting>
+    <Setting Name="DestinationFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\GEM\machine_learning\training</Value>
+    </Setting>
+    <Setting Name="ArchiveFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\GEM\machine_learning\processed</Value>
+    </Setting>
+    <Setting Name="ConsoleApp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Kostal\Machine_Learning_Processing\Oven_AI.exe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
